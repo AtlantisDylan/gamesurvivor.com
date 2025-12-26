@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+
+  <title>萝卜纸巾情侣版｜3次辨妆小游戏（男友挑战）- GameSurvivors</title>
+  <meta name="description" content="致敬爆火的“萝卜纸巾猫”辨物梗：在《萝卜纸巾情侣版》中你扮演男生，3次机会从两款相似化妆品中选出女朋友要的那一个。答对亲吻奖励，答错榴莲惩罚，最终用1-3颗红心结算默契值。" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+
+  <!-- Canonical URL（请按实际路径调整） -->
+  <link rel="canonical" href="https://gamesurvivors.com/luobo-zhijin-couple" />
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="GameSurvivors" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="萝卜纸巾情侣版｜3次辨妆小游戏（男友挑战）" />
+  <meta property="og:description" content="3次机会，从两款相似化妆品中选出女朋友要的那一个：答对亲吻奖励，答错榴莲惩罚，红心结算默契值。" />
+  <meta property="og:url" content="https://gamesurvivors.com/luobo-zhijin-couple" />
+
+  <!-- Apple-like theme -->
+  <meta name="theme-color" content="#0A84FF" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            appleBg: "#F5F5F7",
+            appleCard: "#FFFFFF",
+            appleText: "#1D1D1F",
+            appleSub: "#6E6E73",
+            appleBlue: "#0A84FF",
+            appleGreen: "#34C759",
+            appleRed: "#FF3B30",
+            appleGray: "#E5E5EA"
+          },
+          boxShadow: {
+            apple: "0 10px 30px rgba(0,0,0,0.08)"
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "萝卜纸巾情侣版（暂定）",
+    "url": "https://gamesurvivors.com/luobo-zhijin-couple",
+    "applicationCategory": "GameApplication",
+    "operatingSystem": "Web",
+    "description": "致敬“萝卜纸巾猫”辨物梗的情侣版小游戏：男友根据女友需求区分相似化妆品，3次机会，亲吻奖励与榴莲惩罚，红心结算默契值。"
+  }
+  </script>
+
+  <style>
+    /* 更贴近 iOS 的动效/观感（不依赖颜色指定） */
+    .tap-scale { transform: translateZ(0); }
+    .tap-scale:active { transform: scale(0.98); }
+    .safe-pb { padding-bottom: env(safe-area-inset-bottom); }
+  </style>
+</head>
+
+<body class="bg-appleBg text-appleText safe-pb">
+  <header class="max-w-5xl mx-auto px-4 sm:px-6 pt-8 pb-6">
+    <div class="flex items-start justify-between gap-4">
+      <div>
+        <!-- 仅 1 个 H1 -->
+        <h1 class="text-2xl sm:text-4xl font-semibold tracking-tight">
+          萝卜纸巾情侣版（暂定）：男友辨妆 3 连挑
+        </h1>
+        <p class="mt-3 text-appleSub leading-relaxed max-w-3xl">
+          灵感来自近期爆火的“萝卜纸巾猫”辨物梗：主人用零食训练猫咪通过声音区分“纸巾”和“萝卜”。在这里，你要用<strong>3次机会</strong>从两款外观与用法都很相似的化妆品里，选出女朋友想要的那一个。
+        </p>
+      </div>
+
+      <a href="https://gamesurvivors.com" class="shrink-0 hidden sm:inline-flex items-center rounded-xl px-4 py-2 bg-appleCard shadow-apple border border-appleGray hover:opacity-95 transition">
+        <span class="text-sm font-medium">GameSurvivors</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 pb-12">
+    <!-- Info -->
+    <section class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+      <div class="lg:col-span-2 rounded-2xl bg-appleCard shadow-apple border border-appleGray p-5 sm:p-6">
+        <h2 class="text-lg sm:text-xl font-semibold">游戏玩法</h2>
+        <ul class="mt-3 space-y-2 text-appleSub leading-relaxed">
+          <li>你扮演男生：每回合根据“女朋友的需求提示”，在两款相似化妆品中二选一。</li>
+          <li>每局共 <strong>3 次</strong>，每次题目互不重复。</li>
+          <li>答对：获得 <strong>亲吻奖励</strong>；答错：接受 <strong>榴莲惩罚</strong>。</li>
+          <li>结算：用 <strong>1-3 颗红心</strong>表示你答对的题数。</li>
+        </ul>
+
+        <div class="mt-5 flex flex-wrap gap-3">
+          <button id="btnStart" class="tap-scale inline-flex items-center justify-center rounded-xl px-4 py-2 bg-appleBlue text-white font-medium shadow-apple hover:opacity-95 transition">
+            开始游戏（3次）
+          </button>
+          <button id="btnReset" class="tap-scale inline-flex items-center justify-center rounded-xl px-4 py-2 bg-appleCard border border-appleGray text-appleText font-medium hover:bg-white transition">
+            重新开局
+          </button>
+
+          <div class="flex items-center gap-2 text-sm text-appleSub ml-auto">
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-xl bg-appleCard border border-appleGray" title="回合数">局</span>
+            <span id="roundBadge" class="font-medium">0 / 3</span>
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-xl bg-appleCard border border-appleGray" title="正确数">✓</span>
+            <span id="scoreBadge" class="font-medium">0</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="rounded-2xl bg-appleCard shadow-apple border border-appleGray p-5 sm:p-6">
+        <h2 class="text-lg sm:text-xl font-semibold">今日默契值</h2>
+        <p class="mt-3 text-appleSub leading-relaxed">
+          你答对的越多，红心越多。<br class="hidden sm:block" />
+          友情提示：化妆品名字相近但用途可能不同。
+        </p>
+
+        <div class="mt-4 rounded-xl border border-appleGray bg-white p-4">
+          <div class="text-sm text-appleSub">当前反馈</div>
+          <div id="feedback" class="mt-2 text-base font-semibold">点击「开始游戏」进入第1题</div>
+          <div id="rewardLine" class="mt-2 text-2xl" aria-live="polite"></div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Game -->
+    <section class="mt-6 rounded-2xl bg-appleCard shadow-apple border border-appleGray p-5 sm:p-6">
+      <h2 class="text-lg sm:text-xl font-semibold">第 <span id="roundNum">0</span> 题：女朋友要什么？</h2>
+      <p id="prompt" class="mt-2 text-appleSub leading-relaxed">
+        游戏未开始。点击上方「开始游戏（3次）」。
+      </p>
+
+      <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <!-- Option A -->
+        <button id="optA" class="tap-scale text-left rounded-2xl border border-appleGray bg-white p-5 hover:shadow-apple transition disabled:opacity-50 disabled:cursor-not-allowed">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <div class="text-sm text-appleSub">选项 A</div>
+              <div id="optATitle" class="mt-1 text-lg font-semibold">-</div>
+            </div>
+            <div class="shrink-0 w-10 h-10 rounded-xl bg-appleBg border border-appleGray flex items-center justify-center" aria-hidden="true">
+              <!-- simple icon -->
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M7 7h10v10H7V7z" stroke="currentColor" stroke-width="2" />
+              </svg>
+            </div>
+          </div>
+          <div id="optADesc" class="mt-3 text-sm text-appleSub leading-relaxed">-</div>
+        </button>
+
+        <!-- Option B -->
+        <button id="optB" class="tap-scale text-left rounded-2xl border border-appleGray bg-white p-5 hover:shadow-apple transition disabled:opacity-50 disabled:cursor-not-allowed">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <div class="text-sm text-appleSub">选项 B</div>
+              <div id="optBTitle" class="mt-1 text-lg font-semibold">-</div>
+            </div>
+            <div class="shrink-0 w-10 h-10 rounded-xl bg-appleBg border border-appleGray flex items-center justify-center" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M12 3l7 7-7 7-7-7 7-7z" stroke="currentColor" stroke-width="2" />
+              </svg>
+            </div>
+          </div>
+          <div id="optBDesc" class="mt-3 text-sm text-appleSub leading-relaxed">-</div>
+        </button>
+      </div>
+
+      <div class="mt-5 flex flex-wrap gap-3 items-center">
+        <button id="btnNext" class="tap-scale inline-flex items-center justify-center rounded-xl px-4 py-2 bg-appleGreen text-white font-medium shadow-apple hover:opacity-95 transition disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+          下一题
+        </button>
+
+        <div class="text-sm text-appleSub">
+          规则：每题两款化妆品外观/用法相似；每题不重复。
+        </div>
+      </div>
+    </section>
+
+    <!-- Result -->
+    <section class="mt-6 rounded-2xl bg-appleCard shadow-apple border border-appleGray p-5 sm:p-6">
+      <h2 class="text-lg sm:text-xl font-semibold">结算结果</h2>
+      <p class="mt-2 text-appleSub leading-relaxed">
+        完成3题后自动结算：用红心表示答对题数（1-3颗）。
+      </p>
+
+      <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="rounded-2xl border border-appleGray bg-white p-5">
+          <div class="text-sm text-appleSub">红心</div>
+          <div id="hearts" class="mt-2 text-3xl" aria-live="polite">—</div>
+        </div>
+        <div class="rounded-2xl border border-appleGray bg-white p-5">
+          <div class="text-sm text-appleSub">正确题数</div>
+          <div id="finalScore" class="mt-2 text-2xl font-semibold">—</div>
+        </div>
+        <div class="rounded-2xl border border-appleGray bg-white p-5">
+          <div class="text-sm text-appleSub">评价</div>
+          <div id="finalComment" class="mt-2 text-base font-semibold">—</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEO Content -->
+    <section class="mt-6 rounded-2xl bg-appleCard shadow-apple border border-appleGray p-5 sm:p-6">
+      <h2 class="text-lg sm:text-xl font-semibold">常见问题</h2>
+      <div class="mt-4 space-y-4">
+        <details class="rounded-xl border border-appleGray bg-white p-4">
+          <summary class="cursor-pointer font-medium">为什么每题的化妆品看起来都很像？</summary>
+          <p class="mt-2 text-appleSub leading-relaxed">
+            这是“萝卜纸巾”辨别梗的核心：用相似选项制造“识别压力”。每组题目都刻意选择外观或使用方式相近的化妆品，来测试你对女朋友需求的理解。
+          </p>
+        </details>
+        <details class="rounded-xl border border-appleGray bg-white p-4">
+          <summary class="cursor-pointer font-medium">题目会重复吗？</summary>
+          <p class="mt-2 text-appleSub leading-relaxed">
+            同一局的3题不会重复。重新开局会重新洗牌抽题。
+          </p>
+        </details>
+        <details class="rounded-xl border border-appleGray bg-white p-4">
+          <summary class="cursor-pointer font-medium">适合在手机上玩吗？</summary>
+          <p class="mt-2 text-appleSub leading-relaxed">
+            本页面采用响应式布局，按钮尺寸与间距针对移动端触控优化；PC与手机均可顺畅体验。
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <footer class="mt-8 text-center text-sm text-appleSub">
+      <h2 class="sr-only">页脚</h2>
+      <p>© <span id="year"></span> GameSurvivors.com · 萝卜纸巾情侣版（暂定）</p>
+    </footer>
+  </main>
+
+  <script>
+    // -----------------------------
+    // 题库：每一题为“两选一”相似化妆品，包含提示与正确答案
+    // 说明：同一局抽取3题，不重复
+    // -----------------------------
+    const PAIRS = [
+      {
+        id: "lipstick-vs-lipbalm",
+        prompt: "她说：『我要的是“有颜色、显气色、出门一抹就行”的那支。』你选？",
+        a: { name: "润唇膏", desc: "主打滋润修护，通常更偏“护唇”，颜色较淡或无色。" },
+        b: { name: "口红", desc: "显色更强，强调妆效与气色，持妆需求更高。" },
+        correct: "口红"
+      },
+      {
+        id: "lipgloss-vs-lip-oil",
+        prompt: "她说：『我要那种“水亮、镜面感、像玻璃唇”的。』你选？",
+        a: { name: "唇蜜（Lip Gloss）", desc: "更强调镜面光泽与成膜质感，妆效明显。" },
+        b: { name: "唇油（Lip Oil）", desc: "更偏滋润养护与轻薄光泽，常更像护唇+微光。" },
+        correct: "唇蜜（Lip Gloss）"
+      },
+      {
+        id: "foundation-vs-bb",
+        prompt: "她说：『今天要“遮瑕更稳、妆面更正式”的底妆。』你选？",
+        a: { name: "粉底液", desc: "遮瑕与妆效选择更丰富，适合打造完整底妆。" },
+        b: { name: "BB霜", desc: "更偏日常快速，遮瑕通常较轻薄。" },
+        correct: "粉底液"
+      },
+      {
+        id: "concealer-vs-corrector",
+        prompt: "她说：『黑眼圈有点重，我要“遮掉瑕疵”的那支。』你选？",
+        a: { name: "遮瑕膏", desc: "用于遮盖黑眼圈、痘印等局部瑕疵，通常更高遮盖。" },
+        b: { name: "校色膏", desc: "用于中和肤色问题（泛红/暗沉），更偏颜色修正。" },
+        correct: "遮瑕膏"
+      },
+      {
+        id: "blush-vs-bronzer",
+        prompt: "她说：『我想要“脸颊看起来更有血色”的。』你选？",
+        a: { name: "腮红", desc: "增加气色与红润感，通常刷在苹果肌/颧骨附近。" },
+        b: { name: "修容（阴影）", desc: "强调轮廓与阴影，通常用于削弱或修饰面部线条。" },
+        correct: "腮红"
+      },
+      {
+        id: "highlighter-vs-glow-primer",
+        prompt: "她说：『我想要“局部提亮、鼻梁和颧骨会闪”的那种。』你选？",
+        a: { name: "高光", desc: "用于局部提亮，妆效集中，闪度更明显。" },
+        b: { name: "妆前乳（珠光）", desc: "更偏整体打底提亮，妆感更均匀、低调。" },
+        correct: "高光"
+      },
+      {
+        id: "eyebrow-pencil-vs-brow-powder",
+        prompt: "她说：『我想画“根根分明、线条更清晰”的眉毛。』你选？",
+        a: { name: "眉笔", desc: "线条感更强，适合补眉形与刻画细节。" },
+        b: { name: "眉粉", desc: "更柔和雾面，适合大面积填色与自然过渡。" },
+        correct: "眉笔"
+      },
+      {
+        id: "eyeliner-pen-vs-eyeliner-gel",
+        prompt: "她说：『我要“更持久、防晕、适合内眼线”的那种。』你选？",
+        a: { name: "眼线液笔", desc: "出线利落，适合拉长眼尾，但内眼线可能更考验技术。" },
+        b: { name: "眼线胶笔", desc: "更贴合、相对更耐磨，很多人用来画内眼线。" },
+        correct: "眼线胶笔"
+      },
+      {
+        id: "setting-spray-vs-setting-powder",
+        prompt: "她说：『我脸有点油光，想要“立刻变哑光、控油”的。』你选？",
+        a: { name: "定妆喷雾", desc: "更偏提升成膜与服帖度，妆效看配方。" },
+        b: { name: "定妆粉", desc: "更直接压油光、柔焦毛孔，快速哑光。" },
+        correct: "定妆粉"
+      },
+      {
+        id: "mascara-vs-lash-primer",
+        prompt: "她说：『我要“刷上就变长变浓、眼睛更有神”的那支。』你选？",
+        a: { name: "睫毛膏", desc: "主打纤长/浓密/卷翘，能直接产生明显妆效。" },
+        b: { name: "睫毛打底", desc: "用于打底增强后续睫毛膏效果，本身妆效通常较弱。" },
+        correct: "睫毛膏"
+      }
+    ];
+
+    // -----------------------------
+    // 工具函数
+    // -----------------------------
+    function shuffle(arr) {
+      const a = [...arr];
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+
+    function clamp(n, min, max) {
+      return Math.max(min, Math.min(max, n));
+    }
+
+    // -----------------------------
+    // 状态
+    // -----------------------------
+    let gameActive = false;
+    let roundIndex = 0;     // 0..2
+    let score = 0;          // 0..3
+    let questions = [];     // 本局抽到的3题
+    let answered = false;   // 当前题是否已作答
+    let currentOptions = null; // {A:{...}, B:{...}, correctName}
+
+    // -----------------------------
+    // DOM
+    // -----------------------------
+    const btnStart = document.getElementById("btnStart");
+    const btnReset = document.getElementById("btnReset");
+    const btnNext = document.getElementById("btnNext");
+
+    const roundNum = document.getElementById("roundNum");
+    const promptEl = document.getElementById("prompt");
+
+    const optA = document.getElementById("optA");
+    const optB = document.getElementById("optB");
+    const optATitle = document.getElementById("optATitle");
+    const optADesc = document.getElementById("optADesc");
+    const optBTitle = document.getElementById("optBTitle");
+    const optBDesc = document.getElementById("optBDesc");
+
+    const feedback = document.getElementById("feedback");
+    const rewardLine = document.getElementById("rewardLine");
+
+    const roundBadge = document.getElementById("roundBadge");
+    const scoreBadge = document.getElementById("scoreBadge");
+
+    const heartsEl = document.getElementById("hearts");
+    const finalScoreEl = document.getElementById("finalScore");
+    const finalCommentEl = document.getElementById("finalComment");
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // -----------------------------
+    // UI更新
+    // -----------------------------
+    function setButtonsEnabled() {
+      const optionsEnabled = gameActive && !answered && roundIndex < 3;
+      optA.disabled = !optionsEnabled;
+      optB.disabled = !optionsEnabled;
+
+      btnNext.disabled = !(gameActive && answered && roundIndex < 3);
+    }
+
+    function setOptionStyles(state) {
+      // state: "neutral" | "correctA" | "correctB" | "wrongA" | "wrongB"
+      const neutral = "border-appleGray bg-white";
+      const correct = "border-appleGreen bg-white ring-2 ring-appleGreen";
+      const wrong = "border-appleRed bg-white ring-2 ring-appleRed";
+
+      optA.className = optA.className.replace(/border-appleGray|border-appleGreen|border-appleRed/g, "").replace(/ring-2|ring-appleGreen|ring-appleRed/g, "");
+      optB.className = optB.className.replace(/border-appleGray|border-appleGreen|border-appleRed/g, "").replace(/ring-2|ring-appleGreen|ring-appleRed/g, "");
+
+      // 还原基础类（保留按钮外观）
+      optA.classList.add("rounded-2xl","border","p-5","hover:shadow-apple","transition","disabled:opacity-50","disabled:cursor-not-allowed","tap-scale");
+      optB.classList.add("rounded-2xl","border","p-5","hover:shadow-apple","transition","disabled:opacity-50","disabled:cursor-not-allowed","tap-scale");
+
+      // 默认
+      optA.classList.add("border-appleGray","bg-white");
+      optB.classList.add("border-appleGray","bg-white");
+
+      if (state === "correctA") {
+        optA.classList.remove("border-appleGray");
+        optA.classList.add("border-appleGreen","ring-2","ring-appleGreen");
+      } else if (state === "correctB") {
+        optB.classList.remove("border-appleGray");
+        optB.classList.add("border-appleGreen","ring-2","ring-appleGreen");
+      } else if (state === "wrongA") {
+        optA.classList.remove("border-appleGray");
+        optA.classList.add("border-appleRed","ring-2","ring-appleRed");
+      } else if (state === "wrongB") {
+        optB.classList.remove("border-appleGray");
+        optB.classList.add("border-appleRed","ring-2","ring-appleRed");
+      }
+    }
+
+    function updateBadges() {
+      roundBadge.textContent = `${clamp(roundIndex, 0, 3)} / 3`;
+      scoreBadge.textContent = String(score);
+    }
+
+    function clearResult() {
+      heartsEl.textContent = "—";
+      finalScoreEl.textContent = "—";
+      finalCommentEl.textContent = "—";
+    }
+
+    function showFinal() {
+      const s = clamp(score, 0, 3);
+      const hearts = s === 0 ? "💔" : "❤️".repeat(s);
+
+      heartsEl.textContent = hearts;
+      finalScoreEl.textContent = `${s} / 3`;
+
+      let comment = "需要加强学习：建议先记住她常用的那几样。";
+      if (s === 1) comment = "勉强过关：下一次，别让榴莲太嚣张。";
+      if (s === 2) comment = "不错：已经接近“心有灵犀”。";
+      if (s === 3) comment = "满分默契：今晚你是“懂妆王”。";
+
+      finalCommentEl.textContent = comment;
+    }
+
+    // -----------------------------
+    // 游戏流程
+    // -----------------------------
+    function startGame() {
+      questions = shuffle(PAIRS).slice(0, 3);
+      roundIndex = 0;
+      score = 0;
+      answered = false;
+      gameActive = true;
+
+      rewardLine.textContent = "";
+      feedback.textContent = "第1题开始：听清楚她要的是什么。";
+      clearResult();
+      loadRound();
+    }
+
+    function resetGame() {
+      gameActive = false;
+      roundIndex = 0;
+      score = 0;
+      answered = false;
+      questions = [];
+      currentOptions = null;
+
+      roundNum.textContent = "0";
+      promptEl.textContent = "游戏未开始。点击上方「开始游戏（3次）」。";
+
+      optATitle.textContent = "-";
+      optADesc.textContent = "-";
+      optBTitle.textContent = "-";
+      optBDesc.textContent = "-";
+
+      feedback.textContent = "点击「开始游戏」进入第1题";
+      rewardLine.textContent = "";
+
+      setOptionStyles("neutral");
+      updateBadges();
+      clearResult();
+      setButtonsEnabled();
+    }
+
+    function loadRound() {
+      if (!gameActive) return;
+
+      if (roundIndex >= 3) {
+        // 已结束
+        gameActive = false;
+        feedback.textContent = "本局已结束：请查看结算结果。";
+        rewardLine.textContent = "";
+        showFinal();
+        setButtonsEnabled();
+        return;
+      }
+
+      answered = false;
+      setOptionStyles("neutral");
+
+      const q = questions[roundIndex];
+      roundNum.textContent = String(roundIndex + 1);
+      promptEl.textContent = q.prompt;
+
+      // 随机打乱A/B摆放，提升可玩性
+      const variants = shuffle([
+        { key: "A", name: q.a.name, desc: q.a.desc },
+        { key: "B", name: q.b.name, desc: q.b.desc }
+      ]);
+
+      const left = variants[0];
+      const right = variants[1];
+
+      optATitle.textContent = left.name;
+      optADesc.textContent = left.desc;
+
+      optBTitle.textContent = right.name;
+      optBDesc.textContent = right.desc;
+
+      currentOptions = {
+        A: { name: left.name },
+        B: { name: right.name },
+        correctName: q.correct
+      };
+
+      feedback.textContent = "请选择 A 或 B。";
+      rewardLine.textContent = "";
+      updateBadges();
+      setButtonsEnabled();
+    }
+
+    function answer(choiceKey) {
+      if (!gameActive || answered || !currentOptions) return;
+
+      answered = true;
+      const chosenName = currentOptions[choiceKey].name;
+      const correctName = currentOptions.correctName;
+
+      const isCorrect = chosenName === correctName;
+      if (isCorrect) {
+        score += 1;
+        feedback.textContent = `答对了：她要的是「${correctName}」。`;
+        rewardLine.textContent = "💋💋💋（亲吻奖励）";
+        // 标记正确选项
+        setOptionStyles(choiceKey === "A" ? "correctA" : "correctB");
+      } else {
+        feedback.textContent = `答错了：她要的是「${correctName}」，你给了「${chosenName}」。`;
+        rewardLine.textContent = "🥭? 不，是榴莲：🫣🍈（榴莲惩罚）";
+        // 标记错误选项
+        setOptionStyles(choiceKey === "A" ? "wrongA" : "wrongB");
+        // 同时也提示正确项（用绿色圈出来）
+        setTimeout(() => {
+          if (!currentOptions) return;
+          const correctKey = currentOptions.A.name === correctName ? "A" : "B";
+          setOptionStyles(correctKey === "A" ? "correctA" : "correctB");
+        }, 350);
+      }
+
+      updateBadges();
+
+      // 到第3题作答后直接结算
+      if (roundIndex === 2) {
+        gameActive = false;
+        showFinal();
+        btnNext.disabled = true;
+      } else {
+        btnNext.disabled = false;
+      }
+
+      setButtonsEnabled();
+    }
+
+    function nextRound() {
+      if (!gameActive && roundIndex < 2) {
+        // 游戏可能被提前置为false的边界，正常不走这里
+        return;
+      }
+      roundIndex += 1;
+      loadRound();
+    }
+
+    // -----------------------------
+    // 事件绑定
+    // -----------------------------
+    btnStart.addEventListener("click", () => startGame());
+    btnReset.addEventListener("click", () => resetGame());
+
+    optA.addEventListener("click", () => answer("A"));
+    optB.addEventListener("click", () => answer("B"));
+
+    btnNext.addEventListener("click", () => nextRound());
+
+    // 初始状态
+    resetGame();
+  </script>
+</body>
+</html>
