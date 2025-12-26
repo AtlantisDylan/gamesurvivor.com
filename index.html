@@ -5,20 +5,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
 
   <title>萝卜纸巾情侣版｜3次辨妆小游戏（男友挑战）- GameSurvivors</title>
-  <meta name="description" content="致敬爆火的“萝卜纸巾猫”：在《萝卜纸巾情侣版》中你扮演男生，3次机会从两款相似化妆品中选出女朋友要的那一个。答对亲吻奖励，答错榴莲惩罚，最终用1-3颗红心结算默契值。" />
+  <meta name="description" content="致敬爆火的“萝卜纸巾猫”辨物梗：在《萝卜纸巾情侣版》中你扮演男生，3次机会从两款相似化妆品中选出女朋友要的那一个。答对亲吻奖励，答错榴莲惩罚，最终用1-3颗红心结算默契值。" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
-
-  <!-- Canonical URL（请按实际路径调整） -->
   <link rel="canonical" href="https://gamesurvivors.com/luobo-zhijin-couple" />
-
-  <!-- Open Graph -->
-  <meta property="og:site_name" content="GameSurvivors" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="萝卜纸巾情侣版｜3次辨妆小游戏（男友挑战）" />
-  <meta property="og:description" content="3次机会，从两款相似化妆品中选出女朋友要的那一个：答对亲吻奖励，答错榴莲惩罚，红心结算默契值。" />
-  <meta property="og:url" content="https://gamesurvivors.com/luobo-zhijin-couple" />
-
-  <!-- Apple-like theme -->
   <meta name="theme-color" content="#0A84FF" />
 
   <!-- Tailwind CDN -->
@@ -45,148 +34,160 @@
     }
   </script>
 
-  <!-- Structured data -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "萝卜纸巾情侣版（暂定）",
-    "url": "https://gamesurvivors.com/luobo-zhijin-couple",
-    "applicationCategory": "GameApplication",
-    "operatingSystem": "Web",
-    "description": "致敬“萝卜纸巾猫”辨物梗的情侣版小游戏：男友根据女友需求区分相似化妆品，3次机会，亲吻奖励与榴莲惩罚，红心结算默契值。"
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"萝卜纸巾情侣版（暂定）",
+    "url":"https://gamesurvivors.com/luobo-zhijin-couple",
+    "applicationCategory":"GameApplication",
+    "operatingSystem":"Web",
+    "description":"情侣版辨物小游戏：男友根据女友提示区分相似化妆品，3次机会，亲吻奖励与榴莲惩罚，红心结算默契值。"
   }
   </script>
 
   <style>
-    /* 更贴近 iOS 的动效/观感（不依赖颜色指定） */
     .tap-scale { transform: translateZ(0); }
     .tap-scale:active { transform: scale(0.98); }
     .safe-pb { padding-bottom: env(safe-area-inset-bottom); }
+    .no-select { -webkit-user-select:none; user-select:none; }
   </style>
 </head>
 
 <body class="bg-appleBg text-appleText safe-pb">
-  <header class="max-w-5xl mx-auto px-4 sm:px-6 pt-8 pb-6">
-    <div class="flex items-start justify-between gap-4">
-      <div>
-        <!-- 仅 1 个 H1 -->
-        <h1 class="text-2xl sm:text-4xl font-semibold tracking-tight">
-          萝卜纸巾情侣版（暂定）：男友辨妆 3 连挑
-        </h1>
-        <p class="mt-3 text-appleSub leading-relaxed max-w-3xl">
-          灵感来自近期爆火的“萝卜纸巾猫”辨物梗：主人用零食训练猫咪通过声音区分“纸巾”和“萝卜”。在这里，你要用<strong>3次机会</strong>从两款外观与用法都很相似的化妆品里，选出女朋友想要的那一个。
-        </p>
-      </div>
-
-      <a href="https://gamesurvivors.com" class="shrink-0 hidden sm:inline-flex items-center rounded-xl px-4 py-2 bg-appleCard shadow-apple border border-appleGray hover:opacity-95 transition">
-        <span class="text-sm font-medium">GameSurvivors</span>
-      </a>
-    </div>
+  <header class="max-w-3xl mx-auto px-4 sm:px-6 pt-10 pb-6">
+    <!-- 仅 1 个 H1 -->
+    <h1 class="text-2xl sm:text-4xl font-semibold tracking-tight">
+      萝卜纸巾情侣版（暂定）：男友辨妆 3 连挑
+    </h1>
+    <p class="mt-3 text-appleSub leading-relaxed max-w-2xl">
+      灵感来自“萝卜纸巾猫”辨物梗：你只有 3 次机会，从两款相似化妆品中选出女朋友要的那一个。
+    </p>
   </header>
 
-  <main class="max-w-5xl mx-auto px-4 sm:px-6 pb-12">
-    <!-- Info -->
-    <section class="grid grid-cols-1 lg:grid-cols-3 gap-4">
-      <div class="lg:col-span-2 rounded-2xl bg-appleCard shadow-apple border border-appleGray p-5 sm:p-6">
-        <h2 class="text-lg sm:text-xl font-semibold">游戏玩法</h2>
-        <ul class="mt-3 space-y-2 text-appleSub leading-relaxed">
-          <li>你扮演男生：每回合根据“女朋友的需求提示”，在两款相似化妆品中二选一。</li>
-          <li>每局共 <strong>3 次</strong>，每次题目互不重复。</li>
-          <li>答对：获得 <strong>亲吻奖励</strong>；答错：接受 <strong>榴莲惩罚</strong>。</li>
-          <li>结算：用 <strong>1-3 颗红心</strong>表示你答对的题数。</li>
-        </ul>
+  <main class="max-w-3xl mx-auto px-4 sm:px-6 pb-12">
+    <!-- ========== A) 初始页面 ========== -->
+    <section id="viewHome" class="rounded-2xl bg-appleCard shadow-apple border border-appleGray p-5 sm:p-6">
+      <h2 class="text-lg sm:text-xl font-semibold">开始前</h2>
+      <p class="mt-2 text-appleSub leading-relaxed">
+        点击开始，进入 3 道题挑战。答对亲吻奖励，答错榴莲惩罚，最后用红心结算默契值。
+      </p>
 
-        <div class="mt-5 flex flex-wrap gap-3">
-          <button id="btnStart" class="tap-scale inline-flex items-center justify-center rounded-xl px-4 py-2 bg-appleBlue text-white font-medium shadow-apple hover:opacity-95 transition">
-            开始游戏（3次）
-          </button>
-          <button id="btnReset" class="tap-scale inline-flex items-center justify-center rounded-xl px-4 py-2 bg-appleCard border border-appleGray text-appleText font-medium hover:bg-white transition">
-            重新开局
-          </button>
+      <div class="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <button id="btnGoGame" class="tap-scale inline-flex items-center justify-center rounded-xl px-4 py-3 bg-appleBlue text-white font-medium shadow-apple hover:opacity-95 transition">
+          开始游戏
+        </button>
 
-          <div class="flex items-center gap-2 text-sm text-appleSub ml-auto">
-            <span class="inline-flex items-center justify-center w-8 h-8 rounded-xl bg-appleCard border border-appleGray" title="回合数">局</span>
-            <span id="roundBadge" class="font-medium">0 / 3</span>
-            <span class="inline-flex items-center justify-center w-8 h-8 rounded-xl bg-appleCard border border-appleGray" title="正确数">✓</span>
-            <span id="scoreBadge" class="font-medium">0</span>
-          </div>
+        <button id="btnGoRules" class="tap-scale inline-flex items-center justify-center rounded-xl px-4 py-3 bg-white border border-appleGray text-appleText font-medium hover:shadow-apple transition">
+          查看细致规则
+        </button>
+
+        <button id="btnGoScore" class="tap-scale inline-flex items-center justify-center rounded-xl px-4 py-3 bg-white border border-appleGray text-appleText font-medium hover:shadow-apple transition">
+          最近积分
+        </button>
+      </div>
+
+      <div class="mt-6 rounded-xl border border-appleGray bg-white p-4">
+        <div class="text-sm text-appleSub">小提示</div>
+        <div class="mt-1 font-medium">题目会刻意选择“名字相近 / 外观相似 / 使用方式接近”的组合。</div>
+      </div>
+    </section>
+
+    <!-- ========== 查看细致规则（单独页） ========== -->
+    <section id="viewRules" class="hidden mt-6 rounded-2xl bg-appleCard shadow-apple border border-appleGray p-5 sm:p-6">
+      <div class="flex items-start justify-between gap-3">
+        <h2 class="text-lg sm:text-xl font-semibold">细致规则</h2>
+        <button id="btnRulesBack" class="tap-scale rounded-xl px-3 py-2 bg-white border border-appleGray text-sm font-medium hover:shadow-apple transition">
+          返回
+        </button>
+      </div>
+
+      <ul class="mt-4 space-y-2 text-appleSub leading-relaxed">
+        <li>你扮演男生：每题根据女朋友的需求提示，从两款相似化妆品中二选一。</li>
+        <li>每局共 3 题；同一局内题目不重复。</li>
+        <li>作答前：只显示选项名称，不显示任何“特性说明”。</li>
+        <li>作答后：立即显示“当前反馈”，公布正确答案，并展示两款产品的差异说明（帮助玩家学习）。</li>
+        <li>结算：以 1-3 颗红心代表答对题数（0题将显示💔）。</li>
+      </ul>
+    </section>
+
+    <!-- ========== 最近积分（单独页） ========== -->
+    <section id="viewScore" class="hidden mt-6 rounded-2xl bg-appleCard shadow-apple border border-appleGray p-5 sm:p-6">
+      <div class="flex items-start justify-between gap-3">
+        <h2 class="text-lg sm:text-xl font-semibold">最近积分</h2>
+        <button id="btnScoreBack" class="tap-scale rounded-xl px-3 py-2 bg-white border border-appleGray text-sm font-medium hover:shadow-apple transition">
+          返回
+        </button>
+      </div>
+
+      <p class="mt-3 text-appleSub leading-relaxed">
+        本地记录最近 5 局（仅保存在你的浏览器中）。
+      </p>
+
+      <div class="mt-4 rounded-xl border border-appleGray bg-white p-4">
+        <div class="flex items-center justify-between gap-3">
+          <div class="text-sm text-appleSub">记录列表</div>
+          <button id="btnClearHistory" class="tap-scale rounded-xl px-3 py-2 bg-white border border-appleGray text-sm font-medium hover:shadow-apple transition">
+            清空记录
+          </button>
+        </div>
+
+        <div id="historyList" class="mt-3 space-y-3"></div>
+        <div id="historyEmpty" class="mt-3 text-sm text-appleSub hidden">暂无记录。先来一局吧。</div>
+      </div>
+    </section>
+
+    <!-- ========== B) 游戏页：3道题 ========== -->
+    <section id="viewGame" class="hidden mt-6 rounded-2xl bg-appleCard shadow-apple border border-appleGray p-5 sm:p-6">
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <h2 class="text-lg sm:text-xl font-semibold">挑战进行中：第 <span id="roundNum">1</span> / 3 题</h2>
+
+        <div class="flex items-center gap-2 text-sm text-appleSub">
+          <span class="inline-flex items-center justify-center w-8 h-8 rounded-xl bg-white border border-appleGray" title="正确数">✓</span>
+          <span id="scoreBadge" class="font-medium">0</span>
         </div>
       </div>
 
-      <aside class="rounded-2xl bg-appleCard shadow-apple border border-appleGray p-5 sm:p-6">
-        <h2 class="text-lg sm:text-xl font-semibold">今日默契值</h2>
-        <p class="mt-3 text-appleSub leading-relaxed">
-          你答对的越多，红心越多。<br class="hidden sm:block" />
-          友情提示：化妆品名字相近但用途可能不同。
-        </p>
-
-        <div class="mt-4 rounded-xl border border-appleGray bg-white p-4">
-          <div class="text-sm text-appleSub">当前反馈</div>
-          <div id="feedback" class="mt-2 text-base font-semibold">点击「开始游戏」进入第1题</div>
-          <div id="rewardLine" class="mt-2 text-2xl" aria-live="polite"></div>
-        </div>
-      </aside>
-    </section>
-
-    <!-- Game -->
-    <section class="mt-6 rounded-2xl bg-appleCard shadow-apple border border-appleGray p-5 sm:p-6">
-      <h2 class="text-lg sm:text-xl font-semibold">第 <span id="roundNum">0</span> 题：女朋友要什么？</h2>
       <p id="prompt" class="mt-2 text-appleSub leading-relaxed">
-        游戏未开始。点击上方「开始游戏（3次）」。
+        —
       </p>
 
       <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <!-- Option A -->
-        <button id="optA" class="tap-scale text-left rounded-2xl border border-appleGray bg-white p-5 hover:shadow-apple transition disabled:opacity-50 disabled:cursor-not-allowed">
-          <div class="flex items-start justify-between gap-3">
-            <div>
-              <div class="text-sm text-appleSub">选项 A</div>
-              <div id="optATitle" class="mt-1 text-lg font-semibold">-</div>
-            </div>
-            <div class="shrink-0 w-10 h-10 rounded-xl bg-appleBg border border-appleGray flex items-center justify-center" aria-hidden="true">
-              <!-- simple icon -->
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <path d="M7 7h10v10H7V7z" stroke="currentColor" stroke-width="2" />
-              </svg>
-            </div>
-          </div>
-          <div id="optADesc" class="mt-3 text-sm text-appleSub leading-relaxed">-</div>
+        <button id="optA" class="tap-scale no-select text-left rounded-2xl border border-appleGray bg-white p-5 hover:shadow-apple transition disabled:opacity-50 disabled:cursor-not-allowed">
+          <div class="text-sm text-appleSub">选项 A</div>
+          <div id="optATitle" class="mt-1 text-lg font-semibold">-</div>
+          <!-- 作答前不显示说明；作答后才显示 -->
+          <div id="optADesc" class="mt-3 text-sm text-appleSub leading-relaxed hidden">-</div>
         </button>
 
-        <!-- Option B -->
-        <button id="optB" class="tap-scale text-left rounded-2xl border border-appleGray bg-white p-5 hover:shadow-apple transition disabled:opacity-50 disabled:cursor-not-allowed">
-          <div class="flex items-start justify-between gap-3">
-            <div>
-              <div class="text-sm text-appleSub">选项 B</div>
-              <div id="optBTitle" class="mt-1 text-lg font-semibold">-</div>
-            </div>
-            <div class="shrink-0 w-10 h-10 rounded-xl bg-appleBg border border-appleGray flex items-center justify-center" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <path d="M12 3l7 7-7 7-7-7 7-7z" stroke="currentColor" stroke-width="2" />
-              </svg>
-            </div>
-          </div>
-          <div id="optBDesc" class="mt-3 text-sm text-appleSub leading-relaxed">-</div>
+        <button id="optB" class="tap-scale no-select text-left rounded-2xl border border-appleGray bg-white p-5 hover:shadow-apple transition disabled:opacity-50 disabled:cursor-not-allowed">
+          <div class="text-sm text-appleSub">选项 B</div>
+          <div id="optBTitle" class="mt-1 text-lg font-semibold">-</div>
+          <div id="optBDesc" class="mt-3 text-sm text-appleSub leading-relaxed hidden">-</div>
         </button>
       </div>
 
-      <div class="mt-5 flex flex-wrap gap-3 items-center">
-        <button id="btnNext" class="tap-scale inline-flex items-center justify-center rounded-xl px-4 py-2 bg-appleGreen text-white font-medium shadow-apple hover:opacity-95 transition disabled:opacity-50 disabled:cursor-not-allowed" disabled>
-          下一题
-        </button>
-
-        <div class="text-sm text-appleSub">
-          规则：每题两款化妆品外观/用法相似；每题不重复。
+      <!-- 作答后立即显示反馈（你提到的“当前反馈模块”） -->
+      <div id="feedbackCard" class="hidden mt-5 rounded-xl border border-appleGray bg-white p-4">
+        <div class="text-sm text-appleSub">当前反馈</div>
+        <div id="feedback" class="mt-2 text-base font-semibold">-</div>
+        <div id="rewardLine" class="mt-2 text-2xl" aria-live="polite"></div>
+        <div class="mt-3 flex flex-wrap gap-3">
+          <button id="btnNext" class="tap-scale inline-flex items-center justify-center rounded-xl px-4 py-2 bg-appleGreen text-white font-medium shadow-apple hover:opacity-95 transition disabled:opacity-50 disabled:cursor-not-allowed">
+            下一题
+          </button>
+          <button id="btnQuitToHome" class="tap-scale inline-flex items-center justify-center rounded-xl px-4 py-2 bg-white border border-appleGray text-appleText font-medium hover:shadow-apple transition">
+            退出到首页
+          </button>
         </div>
       </div>
     </section>
 
-    <!-- Result -->
-    <section class="mt-6 rounded-2xl bg-appleCard shadow-apple border border-appleGray p-5 sm:p-6">
+    <!-- ========== C) 结算结果页 ========== -->
+    <section id="viewResult" class="hidden mt-6 rounded-2xl bg-appleCard shadow-apple border border-appleGray p-5 sm:p-6">
       <h2 class="text-lg sm:text-xl font-semibold">结算结果</h2>
       <p class="mt-2 text-appleSub leading-relaxed">
-        完成3题后自动结算：用红心表示答对题数（1-3颗）。
+        你本局答对 <span id="finalScoreInline" class="font-semibold text-appleText">0</span> 题，红心代表默契值。
       </p>
 
       <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -203,44 +204,31 @@
           <div id="finalComment" class="mt-2 text-base font-semibold">—</div>
         </div>
       </div>
-    </section>
 
-    <!-- SEO Content -->
-    <section class="mt-6 rounded-2xl bg-appleCard shadow-apple border border-appleGray p-5 sm:p-6">
-      <h2 class="text-lg sm:text-xl font-semibold">常见问题</h2>
-      <div class="mt-4 space-y-4">
-        <details class="rounded-xl border border-appleGray bg-white p-4">
-          <summary class="cursor-pointer font-medium">为什么每题的化妆品看起来都很像？</summary>
-          <p class="mt-2 text-appleSub leading-relaxed">
-            这是“萝卜纸巾”辨别梗的核心：用相似选项制造“识别压力”。每组题目都刻意选择外观或使用方式相近的化妆品，来测试你对女朋友需求的理解。
-          </p>
-        </details>
-        <details class="rounded-xl border border-appleGray bg-white p-4">
-          <summary class="cursor-pointer font-medium">题目会重复吗？</summary>
-          <p class="mt-2 text-appleSub leading-relaxed">
-            同一局的3题不会重复。重新开局会重新洗牌抽题。
-          </p>
-        </details>
-        <details class="rounded-xl border border-appleGray bg-white p-4">
-          <summary class="cursor-pointer font-medium">适合在手机上玩吗？</summary>
-          <p class="mt-2 text-appleSub leading-relaxed">
-            本页面采用响应式布局，按钮尺寸与间距针对移动端触控优化；PC与手机均可顺畅体验。
-          </p>
-        </details>
+      <div class="mt-5 flex flex-wrap gap-3">
+        <button id="btnPlayAgain" class="tap-scale inline-flex items-center justify-center rounded-xl px-4 py-2 bg-appleBlue text-white font-medium shadow-apple hover:opacity-95 transition">
+          再来一局
+        </button>
+        <button id="btnResultToHome" class="tap-scale inline-flex items-center justify-center rounded-xl px-4 py-2 bg-white border border-appleGray text-appleText font-medium hover:shadow-apple transition">
+          回到首页
+        </button>
+        <button id="btnResultToScore" class="tap-scale inline-flex items-center justify-center rounded-xl px-4 py-2 bg-white border border-appleGray text-appleText font-medium hover:shadow-apple transition">
+          查看最近积分
+        </button>
       </div>
     </section>
 
-    <footer class="mt-8 text-center text-sm text-appleSub">
+    <footer class="mt-10 text-center text-sm text-appleSub">
       <h2 class="sr-only">页脚</h2>
       <p>© <span id="year"></span> GameSurvivors.com · 萝卜纸巾情侣版（暂定）</p>
     </footer>
   </main>
 
   <script>
-    // -----------------------------
+    // =============================
     // 题库：每一题为“两选一”相似化妆品，包含提示与正确答案
-    // 说明：同一局抽取3题，不重复
-    // -----------------------------
+    // 注意：作答前不展示desc；作答后才展示
+    // =============================
     const PAIRS = [
       {
         id: "lipstick-vs-lipbalm",
@@ -314,9 +302,9 @@
       }
     ];
 
-    // -----------------------------
-    // 工具函数
-    // -----------------------------
+    // =============================
+    // 轻量工具
+    // =============================
     function shuffle(arr) {
       const a = [...arr];
       for (let i = a.length - 1; i > 0; i--) {
@@ -325,122 +313,141 @@
       }
       return a;
     }
+    function clamp(n, min, max) { return Math.max(min, Math.min(max, n)); }
 
-    function clamp(n, min, max) {
-      return Math.max(min, Math.min(max, n));
+    // =============================
+    // 本地“最近积分”存储
+    // =============================
+    const HISTORY_KEY = "gs_luobo_zhijin_couple_history_v1";
+    function loadHistory() {
+      try { return JSON.parse(localStorage.getItem(HISTORY_KEY) || "[]"); }
+      catch { return []; }
+    }
+    function saveHistory(list) {
+      localStorage.setItem(HISTORY_KEY, JSON.stringify(list));
+    }
+    function pushHistory(entry) {
+      const list = loadHistory();
+      list.unshift(entry);
+      // 仅保留最近5条
+      const trimmed = list.slice(0, 5);
+      saveHistory(trimmed);
     }
 
-    // -----------------------------
-    // 状态
-    // -----------------------------
-    let gameActive = false;
-    let roundIndex = 0;     // 0..2
-    let score = 0;          // 0..3
-    let questions = [];     // 本局抽到的3题
-    let answered = false;   // 当前题是否已作答
-    let currentOptions = null; // {A:{...}, B:{...}, correctName}
+    // =============================
+    // 视图切换
+    // =============================
+    const viewHome   = document.getElementById("viewHome");
+    const viewRules  = document.getElementById("viewRules");
+    const viewScore  = document.getElementById("viewScore");
+    const viewGame   = document.getElementById("viewGame");
+    const viewResult = document.getElementById("viewResult");
 
-    // -----------------------------
-    // DOM
-    // -----------------------------
-    const btnStart = document.getElementById("btnStart");
-    const btnReset = document.getElementById("btnReset");
-    const btnNext = document.getElementById("btnNext");
+    function showOnly(view) {
+      [viewHome, viewRules, viewScore, viewGame, viewResult].forEach(v => v.classList.add("hidden"));
+      view.classList.remove("hidden");
+      // 让移动端在切换时更顺滑
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
 
+    // =============================
+    // DOM：游戏
+    // =============================
     const roundNum = document.getElementById("roundNum");
+    const scoreBadge = document.getElementById("scoreBadge");
     const promptEl = document.getElementById("prompt");
 
     const optA = document.getElementById("optA");
     const optB = document.getElementById("optB");
     const optATitle = document.getElementById("optATitle");
-    const optADesc = document.getElementById("optADesc");
     const optBTitle = document.getElementById("optBTitle");
+    const optADesc = document.getElementById("optADesc");
     const optBDesc = document.getElementById("optBDesc");
 
+    const feedbackCard = document.getElementById("feedbackCard");
     const feedback = document.getElementById("feedback");
     const rewardLine = document.getElementById("rewardLine");
+    const btnNext = document.getElementById("btnNext");
 
-    const roundBadge = document.getElementById("roundBadge");
-    const scoreBadge = document.getElementById("scoreBadge");
-
+    // =============================
+    // DOM：结算
+    // =============================
     const heartsEl = document.getElementById("hearts");
     const finalScoreEl = document.getElementById("finalScore");
+    const finalScoreInline = document.getElementById("finalScoreInline");
     const finalCommentEl = document.getElementById("finalComment");
 
-    document.getElementById("year").textContent = new Date().getFullYear();
+    // =============================
+    // DOM：最近积分
+    // =============================
+    const historyList = document.getElementById("historyList");
+    const historyEmpty = document.getElementById("historyEmpty");
 
-    // -----------------------------
-    // UI更新
-    // -----------------------------
-    function setButtonsEnabled() {
-      const optionsEnabled = gameActive && !answered && roundIndex < 3;
-      optA.disabled = !optionsEnabled;
-      optB.disabled = !optionsEnabled;
+    // =============================
+    // 状态
+    // =============================
+    let gameActive = false;
+    let roundIndex = 0; // 0..2
+    let score = 0;
+    let questions = [];
+    let answered = false;
+    let currentQ = null;
+    let currentLayout = null; // {A:{name,desc}, B:{name,desc}, correctName}
 
-      btnNext.disabled = !(gameActive && answered && roundIndex < 3);
-    }
-
-    function setOptionStyles(state) {
+    // =============================
+    // UI：样式提示
+    // =============================
+    function setOptionBorder(state) {
       // state: "neutral" | "correctA" | "correctB" | "wrongA" | "wrongB"
-      const neutral = "border-appleGray bg-white";
-      const correct = "border-appleGreen bg-white ring-2 ring-appleGreen";
-      const wrong = "border-appleRed bg-white ring-2 ring-appleRed";
-
-      optA.className = optA.className.replace(/border-appleGray|border-appleGreen|border-appleRed/g, "").replace(/ring-2|ring-appleGreen|ring-appleRed/g, "");
-      optB.className = optB.className.replace(/border-appleGray|border-appleGreen|border-appleRed/g, "").replace(/ring-2|ring-appleGreen|ring-appleRed/g, "");
-
-      // 还原基础类（保留按钮外观）
-      optA.classList.add("rounded-2xl","border","p-5","hover:shadow-apple","transition","disabled:opacity-50","disabled:cursor-not-allowed","tap-scale");
-      optB.classList.add("rounded-2xl","border","p-5","hover:shadow-apple","transition","disabled:opacity-50","disabled:cursor-not-allowed","tap-scale");
-
-      // 默认
-      optA.classList.add("border-appleGray","bg-white");
-      optB.classList.add("border-appleGray","bg-white");
+      // 先清理
+      [optA, optB].forEach(btn => {
+        btn.classList.remove("border-appleGreen","border-appleRed","ring-2","ring-appleGreen","ring-appleRed");
+        btn.classList.add("border-appleGray");
+      });
 
       if (state === "correctA") {
         optA.classList.remove("border-appleGray");
         optA.classList.add("border-appleGreen","ring-2","ring-appleGreen");
-      } else if (state === "correctB") {
+      }
+      if (state === "correctB") {
         optB.classList.remove("border-appleGray");
         optB.classList.add("border-appleGreen","ring-2","ring-appleGreen");
-      } else if (state === "wrongA") {
+      }
+      if (state === "wrongA") {
         optA.classList.remove("border-appleGray");
         optA.classList.add("border-appleRed","ring-2","ring-appleRed");
-      } else if (state === "wrongB") {
+      }
+      if (state === "wrongB") {
         optB.classList.remove("border-appleGray");
         optB.classList.add("border-appleRed","ring-2","ring-appleRed");
       }
     }
 
-    function updateBadges() {
-      roundBadge.textContent = `${clamp(roundIndex, 0, 3)} / 3`;
+    function setChoicesEnabled(enabled) {
+      optA.disabled = !enabled;
+      optB.disabled = !enabled;
+    }
+
+    function hideDescs() {
+      optADesc.classList.add("hidden");
+      optBDesc.classList.add("hidden");
+    }
+
+    function showDescs(aDesc, bDesc) {
+      optADesc.textContent = aDesc;
+      optBDesc.textContent = bDesc;
+      optADesc.classList.remove("hidden");
+      optBDesc.classList.remove("hidden");
+    }
+
+    function updateHUD() {
+      roundNum.textContent = String(roundIndex + 1);
       scoreBadge.textContent = String(score);
     }
 
-    function clearResult() {
-      heartsEl.textContent = "—";
-      finalScoreEl.textContent = "—";
-      finalCommentEl.textContent = "—";
-    }
-
-    function showFinal() {
-      const s = clamp(score, 0, 3);
-      const hearts = s === 0 ? "💔" : "❤️".repeat(s);
-
-      heartsEl.textContent = hearts;
-      finalScoreEl.textContent = `${s} / 3`;
-
-      let comment = "需要加强学习：建议先记住她常用的那几样。";
-      if (s === 1) comment = "勉强过关：下一次，别让榴莲太嚣张。";
-      if (s === 2) comment = "不错：已经接近“心有灵犀”。";
-      if (s === 3) comment = "满分默契：今晚你是“懂妆王”。";
-
-      finalCommentEl.textContent = comment;
-    }
-
-    // -----------------------------
-    // 游戏流程
-    // -----------------------------
+    // =============================
+    // 游戏：开始/出题/作答/结算
+    // =============================
     function startGame() {
       questions = shuffle(PAIRS).slice(0, 3);
       roundIndex = 0;
@@ -448,147 +455,212 @@
       answered = false;
       gameActive = true;
 
+      feedbackCard.classList.add("hidden");
       rewardLine.textContent = "";
-      feedback.textContent = "第1题开始：听清楚她要的是什么。";
-      clearResult();
+      setOptionBorder("neutral");
+      hideDescs();
+
+      showOnly(viewGame);
       loadRound();
     }
 
-    function resetGame() {
-      gameActive = false;
-      roundIndex = 0;
-      score = 0;
-      answered = false;
-      questions = [];
-      currentOptions = null;
-
-      roundNum.textContent = "0";
-      promptEl.textContent = "游戏未开始。点击上方「开始游戏（3次）」。";
-
-      optATitle.textContent = "-";
-      optADesc.textContent = "-";
-      optBTitle.textContent = "-";
-      optBDesc.textContent = "-";
-
-      feedback.textContent = "点击「开始游戏」进入第1题";
-      rewardLine.textContent = "";
-
-      setOptionStyles("neutral");
-      updateBadges();
-      clearResult();
-      setButtonsEnabled();
-    }
-
     function loadRound() {
-      if (!gameActive) return;
-
-      if (roundIndex >= 3) {
-        // 已结束
-        gameActive = false;
-        feedback.textContent = "本局已结束：请查看结算结果。";
-        rewardLine.textContent = "";
-        showFinal();
-        setButtonsEnabled();
-        return;
-      }
-
+      currentQ = questions[roundIndex];
       answered = false;
-      setOptionStyles("neutral");
+      updateHUD();
 
-      const q = questions[roundIndex];
-      roundNum.textContent = String(roundIndex + 1);
-      promptEl.textContent = q.prompt;
+      promptEl.textContent = currentQ.prompt;
 
-      // 随机打乱A/B摆放，提升可玩性
+      // 洗牌放置A/B（仅显示名称，不显示desc）
       const variants = shuffle([
-        { key: "A", name: q.a.name, desc: q.a.desc },
-        { key: "B", name: q.b.name, desc: q.b.desc }
+        { name: currentQ.a.name, desc: currentQ.a.desc },
+        { name: currentQ.b.name, desc: currentQ.b.desc }
       ]);
 
-      const left = variants[0];
-      const right = variants[1];
-
-      optATitle.textContent = left.name;
-      optADesc.textContent = left.desc;
-
-      optBTitle.textContent = right.name;
-      optBDesc.textContent = right.desc;
-
-      currentOptions = {
-        A: { name: left.name },
-        B: { name: right.name },
-        correctName: q.correct
+      currentLayout = {
+        A: variants[0],
+        B: variants[1],
+        correctName: currentQ.correct
       };
 
-      feedback.textContent = "请选择 A 或 B。";
-      rewardLine.textContent = "";
-      updateBadges();
-      setButtonsEnabled();
+      optATitle.textContent = currentLayout.A.name;
+      optBTitle.textContent = currentLayout.B.name;
+
+      // 作答前：不展示说明
+      hideDescs();
+
+      // 反馈模块隐藏
+      feedbackCard.classList.add("hidden");
+      btnNext.disabled = true;
+
+      // 选项可点击
+      setChoicesEnabled(true);
+      setOptionBorder("neutral");
     }
 
     function answer(choiceKey) {
-      if (!gameActive || answered || !currentOptions) return;
-
+      if (!gameActive || answered) return;
       answered = true;
-      const chosenName = currentOptions[choiceKey].name;
-      const correctName = currentOptions.correctName;
+
+      setChoicesEnabled(false);
+
+      const chosenName = currentLayout[choiceKey].name;
+      const correctName = currentLayout.correctName;
 
       const isCorrect = chosenName === correctName;
+
+      // 作答后：展示两边说明（符合你第1条需求）
+      showDescs(currentLayout.A.desc, currentLayout.B.desc);
+
+      // 反馈模块立即显示（符合你第2条 b）
+      feedbackCard.classList.remove("hidden");
+
       if (isCorrect) {
         score += 1;
         feedback.textContent = `答对了：她要的是「${correctName}」。`;
         rewardLine.textContent = "💋💋💋（亲吻奖励）";
-        // 标记正确选项
-        setOptionStyles(choiceKey === "A" ? "correctA" : "correctB");
+        setOptionBorder(choiceKey === "A" ? "correctA" : "correctB");
       } else {
         feedback.textContent = `答错了：她要的是「${correctName}」，你给了「${chosenName}」。`;
-        rewardLine.textContent = "🥭? 不，是榴莲：🫣🍈（榴莲惩罚）";
-        // 标记错误选项
-        setOptionStyles(choiceKey === "A" ? "wrongA" : "wrongB");
-        // 同时也提示正确项（用绿色圈出来）
+        rewardLine.textContent = "🫣🍈（榴莲惩罚）";
+        setOptionBorder(choiceKey === "A" ? "wrongA" : "wrongB");
+
+        // 再标出正确项
+        const correctKey = (currentLayout.A.name === correctName) ? "A" : "B";
         setTimeout(() => {
-          if (!currentOptions) return;
-          const correctKey = currentOptions.A.name === correctName ? "A" : "B";
-          setOptionStyles(correctKey === "A" ? "correctA" : "correctB");
-        }, 350);
+          setOptionBorder(correctKey === "A" ? "correctA" : "correctB");
+        }, 250);
       }
 
-      updateBadges();
+      updateHUD();
 
-      // 到第3题作答后直接结算
+      // 最后一题：不显示“下一题”，而是直接引导结算
       if (roundIndex === 2) {
-        gameActive = false;
-        showFinal();
-        btnNext.disabled = true;
+        btnNext.textContent = "查看结算结果";
+        btnNext.disabled = false;
       } else {
+        btnNext.textContent = "下一题";
         btnNext.disabled = false;
       }
-
-      setButtonsEnabled();
     }
 
-    function nextRound() {
-      if (!gameActive && roundIndex < 2) {
-        // 游戏可能被提前置为false的边界，正常不走这里
+    function nextStep() {
+      if (!answered) return;
+
+      if (roundIndex === 2) {
+        endGame();
         return;
       }
+
       roundIndex += 1;
       loadRound();
     }
 
-    // -----------------------------
-    // 事件绑定
-    // -----------------------------
-    btnStart.addEventListener("click", () => startGame());
-    btnReset.addEventListener("click", () => resetGame());
+    function endGame() {
+      gameActive = false;
 
+      // 写入历史
+      pushHistory({
+        ts: Date.now(),
+        score,
+        total: 3
+      });
+
+      // 结算渲染
+      renderResult();
+      showOnly(viewResult);
+    }
+
+    function renderResult() {
+      const s = clamp(score, 0, 3);
+      const hearts = s === 0 ? "💔" : "❤️".repeat(s);
+
+      heartsEl.textContent = hearts;
+      finalScoreInline.textContent = String(s);
+      finalScoreEl.textContent = `${s} / 3`;
+
+      let comment = "需要加强学习：建议先记住她常用的那几样。";
+      if (s === 1) comment = "勉强过关：下一次，别让榴莲太嚣张。";
+      if (s === 2) comment = "不错：已经接近“心有灵犀”。";
+      if (s === 3) comment = "满分默契：今晚你是“懂妆王”。";
+      finalCommentEl.textContent = comment;
+    }
+
+    // =============================
+    // 最近积分：渲染
+    // =============================
+    function formatTime(ts) {
+      const d = new Date(ts);
+      const pad = (n) => String(n).padStart(2, "0");
+      return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}`;
+    }
+
+    function renderHistory() {
+      const list = loadHistory();
+      historyList.innerHTML = "";
+
+      if (!list.length) {
+        historyEmpty.classList.remove("hidden");
+        return;
+      }
+      historyEmpty.classList.add("hidden");
+
+      list.forEach(item => {
+        const s = clamp(item.score, 0, 3);
+        const hearts = s === 0 ? "💔" : "❤️".repeat(s);
+
+        const card = document.createElement("div");
+        card.className = "rounded-xl border border-appleGray bg-appleBg p-4";
+        card.innerHTML = `
+          <div class="flex items-center justify-between gap-3">
+            <div>
+              <div class="text-sm text-appleSub">时间</div>
+              <div class="mt-1 font-medium">${formatTime(item.ts)}</div>
+            </div>
+            <div class="text-right">
+              <div class="text-sm text-appleSub">成绩</div>
+              <div class="mt-1 text-lg font-semibold">${s}/3</div>
+            </div>
+          </div>
+          <div class="mt-2 text-2xl">${hearts}</div>
+        `;
+        historyList.appendChild(card);
+      });
+    }
+
+    // =============================
+    // 导航按钮绑定
+    // =============================
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // 首页三按钮
+    document.getElementById("btnGoGame").addEventListener("click", startGame);
+    document.getElementById("btnGoRules").addEventListener("click", () => showOnly(viewRules));
+    document.getElementById("btnGoScore").addEventListener("click", () => { renderHistory(); showOnly(viewScore); });
+
+    // 规则页返回
+    document.getElementById("btnRulesBack").addEventListener("click", () => showOnly(viewHome));
+
+    // 积分页返回 + 清空
+    document.getElementById("btnScoreBack").addEventListener("click", () => showOnly(viewHome));
+    document.getElementById("btnClearHistory").addEventListener("click", () => {
+      localStorage.removeItem(HISTORY_KEY);
+      renderHistory();
+    });
+
+    // 游戏页：作答 / 下一步 / 退出
     optA.addEventListener("click", () => answer("A"));
     optB.addEventListener("click", () => answer("B"));
+    btnNext.addEventListener("click", nextStep);
+    document.getElementById("btnQuitToHome").addEventListener("click", () => showOnly(viewHome));
 
-    btnNext.addEventListener("click", () => nextRound());
+    // 结算页：再来一局 / 回首页 / 看积分
+    document.getElementById("btnPlayAgain").addEventListener("click", startGame);
+    document.getElementById("btnResultToHome").addEventListener("click", () => showOnly(viewHome));
+    document.getElementById("btnResultToScore").addEventListener("click", () => { renderHistory(); showOnly(viewScore); });
 
-    // 初始状态
-    resetGame();
+    // 初始：只显示首页
+    showOnly(viewHome);
   </script>
 </body>
 </html>
