@@ -4,13 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
 
-  <title>萝卜纸巾情侣版｜3次辨妆小游戏（男友挑战）- GameSurvivors</title>
-  <meta name="description" content="致敬爆火的“萝卜纸巾猫”辨物梗：在《萝卜纸巾情侣版》中你扮演男生，3次机会从两款相似化妆品中选出女朋友要的那一个。答对亲吻奖励，答错榴莲惩罚，最终用1-3颗红心结算默契值。" />
+  <title>萝卜纸巾情侣版｜困难模式：只看图辨妆（男友挑战）- GameSurvivors</title>
+  <meta name="description" content="《萝卜纸巾情侣版（暂定）》困难模式上线：女朋友用口语化需求提要求，你只能看化妆品图片做选择。3次机会，答对亲吻奖励，答错榴莲惩罚，红心结算默契值。" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://gamesurvivors.com/luobo-zhijin-couple" />
   <meta name="theme-color" content="#0A84FF" />
 
-  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -42,7 +41,7 @@
     "url":"https://gamesurvivors.com/luobo-zhijin-couple",
     "applicationCategory":"GameApplication",
     "operatingSystem":"Web",
-    "description":"情侣版辨物小游戏：男友根据女友提示区分相似化妆品，3次机会，亲吻奖励与榴莲惩罚，红心结算默契值。"
+    "description":"情侣版辨物小游戏：困难模式仅看化妆品图片作答。女友口语化提需求，作答后显示专业解析，3次机会，红心结算默契值。"
   }
   </script>
 
@@ -56,12 +55,11 @@
 
 <body class="bg-appleBg text-appleText safe-pb">
   <header class="max-w-3xl mx-auto px-4 sm:px-6 pt-10 pb-6">
-    <!-- 仅 1 个 H1 -->
     <h1 class="text-2xl sm:text-4xl font-semibold tracking-tight">
-      萝卜纸巾情侣版（暂定）：男友辨妆 3 连挑
+      萝卜纸巾情侣版（暂定）：困难模式·只看图辨妆
     </h1>
     <p class="mt-3 text-appleSub leading-relaxed max-w-2xl">
-      灵感来自“萝卜纸巾猫”辨物梗：你只有 3 次机会，从两款相似化妆品中选出女朋友要的那一个。
+      女朋友用很日常的说法提需求，你只能看两张化妆品图片做选择。答对亲吻奖励，答错榴莲惩罚，3题后红心结算默契值。
     </p>
   </header>
 
@@ -70,8 +68,24 @@
     <section id="viewHome" class="rounded-2xl bg-appleCard shadow-apple border border-appleGray p-5 sm:p-6">
       <h2 class="text-lg sm:text-xl font-semibold">开始前</h2>
       <p class="mt-2 text-appleSub leading-relaxed">
-        点击开始，进入 3 道题挑战。答对亲吻奖励，答错榴莲惩罚，最后用红心结算默契值。
+        先选难度，再开始。普通模式更友好；困难模式只看图，且女友提示更口语。
       </p>
+
+      <!-- 难度选择 -->
+      <div class="mt-4 rounded-xl border border-appleGray bg-white p-4">
+        <div class="text-sm text-appleSub">选择难度</div>
+        <div class="mt-2 inline-flex rounded-xl border border-appleGray overflow-hidden">
+          <button id="btnDiffEasy" class="px-4 py-2 text-sm font-medium bg-white hover:bg-appleBg transition">
+            普通
+          </button>
+          <button id="btnDiffHard" class="px-4 py-2 text-sm font-medium bg-appleBg hover:bg-appleBg transition">
+            困难（推荐）
+          </button>
+        </div>
+        <div id="diffHint" class="mt-2 text-sm text-appleSub">
+          困难：选项仅图片呈现；提示更生活化；解析在作答后给出。
+        </div>
+      </div>
 
       <div class="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-3">
         <button id="btnGoGame" class="tap-scale inline-flex items-center justify-center rounded-xl px-4 py-3 bg-appleBlue text-white font-medium shadow-apple hover:opacity-95 transition">
@@ -89,7 +103,9 @@
 
       <div class="mt-6 rounded-xl border border-appleGray bg-white p-4">
         <div class="text-sm text-appleSub">小提示</div>
-        <div class="mt-1 font-medium">题目会刻意选择“名字相近 / 外观相似 / 使用方式接近”的组合。</div>
+        <div class="mt-1 font-medium">
+          困难模式里，很多产品“长得很像”。你需要既懂用途，也认得外观。
+        </div>
       </div>
     </section>
 
@@ -105,9 +121,10 @@
       <ul class="mt-4 space-y-2 text-appleSub leading-relaxed">
         <li>你扮演男生：每题根据女朋友的需求提示，从两款相似化妆品中二选一。</li>
         <li>每局共 3 题；同一局内题目不重复。</li>
-        <li>作答前：只显示选项名称，不显示任何“特性说明”。</li>
-        <li>作答后：立即显示“当前反馈”，公布正确答案，并展示两款产品的差异说明（帮助玩家学习）。</li>
-        <li>结算：以 1-3 颗红心代表答对题数（0题将显示💔）。</li>
+        <li>普通模式：提示更直白；仍然只看图作答（更贴近“困难”玩法一致性）。</li>
+        <li>困难模式：提示更口语、更生活化；作答前不出现任何解析信息。</li>
+        <li>作答后：立即显示“当前反馈”，公布正确答案，并展示两款产品的名称与专业解析（帮助玩家学习）。</li>
+        <li>结算：以 1-3 颗红心代表答对题数（0题显示💔）。</li>
       </ul>
     </section>
 
@@ -141,7 +158,6 @@
     <section id="viewGame" class="hidden mt-6 rounded-2xl bg-appleCard shadow-apple border border-appleGray p-5 sm:p-6">
       <div class="flex flex-wrap items-center justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-semibold">挑战进行中：第 <span id="roundNum">1</span> / 3 题</h2>
-
         <div class="flex items-center gap-2 text-sm text-appleSub">
           <span class="inline-flex items-center justify-center w-8 h-8 rounded-xl bg-white border border-appleGray" title="正确数">✓</span>
           <span id="scoreBadge" class="font-medium">0</span>
@@ -152,26 +168,38 @@
         —
       </p>
 
+      <!-- 选项：仅图片呈现 -->
       <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <button id="optA" class="tap-scale no-select text-left rounded-2xl border border-appleGray bg-white p-5 hover:shadow-apple transition disabled:opacity-50 disabled:cursor-not-allowed">
+        <button id="optA" class="tap-scale no-select text-left rounded-2xl border border-appleGray bg-white p-4 hover:shadow-apple transition disabled:opacity-50 disabled:cursor-not-allowed">
           <div class="text-sm text-appleSub">选项 A</div>
-          <div id="optATitle" class="mt-1 text-lg font-semibold">-</div>
-          <!-- 作答前不显示说明；作答后才显示 -->
-          <div id="optADesc" class="mt-3 text-sm text-appleSub leading-relaxed hidden">-</div>
+
+          <div class="mt-3 rounded-xl border border-appleGray overflow-hidden bg-appleBg">
+            <img id="imgA" src="" alt="" loading="eager" class="w-full aspect-square object-cover" />
+          </div>
+
+          <!-- 隐藏名称：仅给读屏/SEO（不帮助玩家视觉作答） -->
+          <div id="srNameA" class="sr-only"></div>
+
+          <!-- 方案B：作答前无解析节点；作答后动态插入解析 -->
         </button>
 
-        <button id="optB" class="tap-scale no-select text-left rounded-2xl border border-appleGray bg-white p-5 hover:shadow-apple transition disabled:opacity-50 disabled:cursor-not-allowed">
+        <button id="optB" class="tap-scale no-select text-left rounded-2xl border border-appleGray bg-white p-4 hover:shadow-apple transition disabled:opacity-50 disabled:cursor-not-allowed">
           <div class="text-sm text-appleSub">选项 B</div>
-          <div id="optBTitle" class="mt-1 text-lg font-semibold">-</div>
-          <div id="optBDesc" class="mt-3 text-sm text-appleSub leading-relaxed hidden">-</div>
+
+          <div class="mt-3 rounded-xl border border-appleGray overflow-hidden bg-appleBg">
+            <img id="imgB" src="" alt="" loading="eager" class="w-full aspect-square object-cover" />
+          </div>
+
+          <div id="srNameB" class="sr-only"></div>
         </button>
       </div>
 
-      <!-- 作答后立即显示反馈（你提到的“当前反馈模块”） -->
+      <!-- 作答后立即显示反馈 -->
       <div id="feedbackCard" class="hidden mt-5 rounded-xl border border-appleGray bg-white p-4">
         <div class="text-sm text-appleSub">当前反馈</div>
         <div id="feedback" class="mt-2 text-base font-semibold">-</div>
         <div id="rewardLine" class="mt-2 text-2xl" aria-live="polite"></div>
+
         <div class="mt-3 flex flex-wrap gap-3">
           <button id="btnNext" class="tap-scale inline-flex items-center justify-center rounded-xl px-4 py-2 bg-appleGreen text-white font-medium shadow-apple hover:opacity-95 transition disabled:opacity-50 disabled:cursor-not-allowed">
             下一题
@@ -226,84 +254,114 @@
 
   <script>
     // =============================
-    // 题库：每一题为“两选一”相似化妆品，包含提示与正确答案
-    // 注意：作答前不展示desc；作答后才展示
+    // 难度
+    // =============================
+    const DIFF_KEY = "gs_luobo_zhijin_diff_v1"; // "easy" | "hard"
+    function getDiff() {
+      const v = localStorage.getItem(DIFF_KEY);
+      return (v === "easy" || v === "hard") ? v : "hard";
+    }
+    function setDiff(v) {
+      localStorage.setItem(DIFF_KEY, v);
+      renderDiffUI();
+    }
+
+    // =============================
+    // 图片路径（默认本地资源方案）
+    // 你只要把图片按文件名放到 /assets/cosmetics/ 即可
+    // =============================
+    const ASSET_BASE = "/assets/cosmetics/";
+
+    // =============================
+    // 题库：promptHard 口语化；promptEasy 更直白
+    // 解析（desc）允许更专业，但仅作答后显示
+    // 每个选项必须提供 img（本地路径）
     // =============================
     const PAIRS = [
       {
         id: "lipstick-vs-lipbalm",
-        prompt: "她说：『我要的是“有颜色、显气色、出门一抹就行”的那支。』你选？",
-        a: { name: "润唇膏", desc: "主打滋润修护，通常更偏“护唇”，颜色较淡或无色。" },
-        b: { name: "口红", desc: "显色更强，强调妆效与气色，持妆需求更高。" },
+        promptEasy: "她说：『我想要上嘴有点颜色、看起来精神点的那个。』你选？",
+        promptHard: "她说：『我现在嘴巴看着好没气色，你给我拿那个“上嘴立刻像没熬夜”的。』",
+        a: { name: "润唇膏", img: ASSET_BASE + "lip-balm.webp", desc: "润唇膏以滋润修护为主，颜色通常更淡或无色，更偏护唇用途。" },
+        b: { name: "口红", img: ASSET_BASE + "lipstick.webp", desc: "口红显色更强，强调妆效与气色提升，通常比润唇膏更“有妆感”。" },
         correct: "口红"
       },
       {
-        id: "lipgloss-vs-lip-oil",
-        prompt: "她说：『我要那种“水亮、镜面感、像玻璃唇”的。』你选？",
-        a: { name: "唇蜜（Lip Gloss）", desc: "更强调镜面光泽与成膜质感，妆效明显。" },
-        b: { name: "唇油（Lip Oil）", desc: "更偏滋润养护与轻薄光泽，常更像护唇+微光。" },
+        id: "lipgloss-vs-lipoil",
+        promptEasy: "她说：『我想要嘴巴亮亮的、像果冻那样的。』你选？",
+        promptHard: "她说：『我要那种一抹就“水光嘟嘟”的，拍照会反光那种。』",
+        a: { name: "唇蜜（Lip Gloss）", img: ASSET_BASE + "lip-gloss.webp", desc: "唇蜜更强调镜面光泽与成膜妆效，视觉存在感更强，常用于打造“玻璃唇”。" },
+        b: { name: "唇油（Lip Oil）", img: ASSET_BASE + "lip-oil.webp", desc: "唇油更偏滋润养护与轻薄光泽，妆效通常更像“护唇+微光”。" },
         correct: "唇蜜（Lip Gloss）"
       },
       {
         id: "foundation-vs-bb",
-        prompt: "她说：『今天要“遮瑕更稳、妆面更正式”的底妆。』你选？",
-        a: { name: "粉底液", desc: "遮瑕与妆效选择更丰富，适合打造完整底妆。" },
-        b: { name: "BB霜", desc: "更偏日常快速，遮瑕通常较轻薄。" },
+        promptEasy: "她说：『今天要遮得更稳一点、妆看起来更认真。』你选？",
+        promptHard: "她说：『我今天要见人，别让我脸看起来“没睡醒”，给我拿那个更能打的底。』",
+        a: { name: "粉底液", img: ASSET_BASE + "foundation.webp", desc: "粉底液遮瑕/妆效可选范围更广，更适合打造完整、正式的底妆。" },
+        b: { name: "BB霜", img: ASSET_BASE + "bb-cream.webp", desc: "BB霜更偏日常快速上脸，遮瑕通常更轻薄，妆效更“懒人友好”。" },
         correct: "粉底液"
       },
       {
         id: "concealer-vs-corrector",
-        prompt: "她说：『黑眼圈有点重，我要“遮掉瑕疵”的那支。』你选？",
-        a: { name: "遮瑕膏", desc: "用于遮盖黑眼圈、痘印等局部瑕疵，通常更高遮盖。" },
-        b: { name: "校色膏", desc: "用于中和肤色问题（泛红/暗沉），更偏颜色修正。" },
+        promptEasy: "她说：『黑眼圈有点重，我要能把它遮住的那支。』你选？",
+        promptHard: "她说：『我这黑眼圈太明显了，快给我拿那个“能直接盖住”的，不要搞花里胡哨。』",
+        a: { name: "遮瑕膏", img: ASSET_BASE + "concealer.webp", desc: "遮瑕膏用于遮盖黑眼圈、痘印等局部瑕疵，通常更高遮盖力。" },
+        b: { name: "校色膏", img: ASSET_BASE + "color-corrector.webp", desc: "校色膏用于中和肤色问题（泛红/暗沉/青紫），更偏颜色修正而非直接遮盖。" },
         correct: "遮瑕膏"
       },
       {
-        id: "blush-vs-bronzer",
-        prompt: "她说：『我想要“脸颊看起来更有血色”的。』你选？",
-        a: { name: "腮红", desc: "增加气色与红润感，通常刷在苹果肌/颧骨附近。" },
-        b: { name: "修容（阴影）", desc: "强调轮廓与阴影，通常用于削弱或修饰面部线条。" },
+        id: "blush-vs-contour",
+        promptEasy: "她说：『我想脸颊看起来有点血色。』你选？",
+        promptHard: "她说：『我想看起来更有精神一点，不要像刚下班那样“脸一片灰”。』",
+        a: { name: "腮红", img: ASSET_BASE + "blush.webp", desc: "腮红用于增加红润气色，通常上在苹果肌或颧骨附近，立刻“有生命力”。" },
+        b: { name: "修容（阴影）", img: ASSET_BASE + "contour.webp", desc: "修容用于加强轮廓与阴影，偏“瘦脸/立体”，不是增加气色的主力产品。" },
         correct: "腮红"
       },
       {
         id: "highlighter-vs-glow-primer",
-        prompt: "她说：『我想要“局部提亮、鼻梁和颧骨会闪”的那种。』你选？",
-        a: { name: "高光", desc: "用于局部提亮，妆效集中，闪度更明显。" },
-        b: { name: "妆前乳（珠光）", desc: "更偏整体打底提亮，妆感更均匀、低调。" },
+        promptEasy: "她说：『我想鼻梁、颧骨那儿亮一点。』你选？",
+        promptHard: "她说：『我想脸上有点“闪一下”的感觉，就那种拍照一转头会亮的。』",
+        a: { name: "高光", img: ASSET_BASE + "highlighter.webp", desc: "高光用于局部提亮（颧骨/鼻梁/眉骨等），光泽集中，闪度更明显。" },
+        b: { name: "妆前乳（珠光）", img: ASSET_BASE + "glow-primer.webp", desc: "珠光妆前乳更偏整体打底提亮、增加服帖度，光泽更均匀更克制。" },
         correct: "高光"
       },
       {
-        id: "eyebrow-pencil-vs-brow-powder",
-        prompt: "她说：『我想画“根根分明、线条更清晰”的眉毛。』你选？",
-        a: { name: "眉笔", desc: "线条感更强，适合补眉形与刻画细节。" },
-        b: { name: "眉粉", desc: "更柔和雾面，适合大面积填色与自然过渡。" },
+        id: "brow-pencil-vs-brow-powder",
+        promptEasy: "她说：『我想眉毛画得更清楚一点。』你选？",
+        promptHard: "她说：『我想眉毛更有“根根分明”的感觉，别糊成一片。』",
+        a: { name: "眉笔", img: ASSET_BASE + "brow-pencil.webp", desc: "眉笔线条感更强，适合刻画眉形与细节，容易做出清晰眉尾和毛流。" },
+        b: { name: "眉粉", img: ASSET_BASE + "brow-powder.webp", desc: "眉粉雾面柔和，适合大面积填色与自然过渡，但线条锐利度通常不如眉笔。" },
         correct: "眉笔"
       },
       {
         id: "eyeliner-pen-vs-eyeliner-gel",
-        prompt: "她说：『我要“更持久、防晕、适合内眼线”的那种。』你选？",
-        a: { name: "眼线液笔", desc: "出线利落，适合拉长眼尾，但内眼线可能更考验技术。" },
-        b: { name: "眼线胶笔", desc: "更贴合、相对更耐磨，很多人用来画内眼线。" },
+        promptEasy: "她说：『我想要更不容易晕的眼线。』你选？",
+        promptHard: "她说：『我眼线老是糊！给我拿那个更扛造的，我要今天一整天都别塌。』",
+        a: { name: "眼线液笔", img: ASSET_BASE + "eyeliner-pen.webp", desc: "眼线液笔出线利落、锋利，适合拉长眼尾，但不同配方防晕能力差异大。" },
+        b: { name: "眼线胶笔", img: ASSET_BASE + "eyeliner-gel.webp", desc: "眼线胶笔更贴合睫毛根部，很多人用于内眼线与更耐磨的线条需求。" },
         correct: "眼线胶笔"
       },
       {
         id: "setting-spray-vs-setting-powder",
-        prompt: "她说：『我脸有点油光，想要“立刻变哑光、控油”的。』你选？",
-        a: { name: "定妆喷雾", desc: "更偏提升成膜与服帖度，妆效看配方。" },
-        b: { name: "定妆粉", desc: "更直接压油光、柔焦毛孔，快速哑光。" },
+        promptEasy: "她说：『我想马上控油、不要反光。』你选？",
+        promptHard: "她说：『我现在脸好油，拍照要变“反光板”了，快给我按住它！』",
+        a: { name: "定妆喷雾", img: ASSET_BASE + "setting-spray.webp", desc: "定妆喷雾更偏成膜与服帖度提升，控油与哑光效果取决于配方类型。" },
+        b: { name: "定妆粉", img: ASSET_BASE + "setting-powder.webp", desc: "定妆粉能更直接压油光、柔焦毛孔，达到快速哑光与控油目的。" },
         correct: "定妆粉"
       },
       {
         id: "mascara-vs-lash-primer",
-        prompt: "她说：『我要“刷上就变长变浓、眼睛更有神”的那支。』你选？",
-        a: { name: "睫毛膏", desc: "主打纤长/浓密/卷翘，能直接产生明显妆效。" },
-        b: { name: "睫毛打底", desc: "用于打底增强后续睫毛膏效果，本身妆效通常较弱。" },
+        promptEasy: "她说：『我想睫毛刷完更长更浓。』你选？",
+        promptHard: "她说：『我想眼睛立刻有神！那种一刷就“眼神起来了”的拿来。』",
+        a: { name: "睫毛膏", img: ASSET_BASE + "mascara.webp", desc: "睫毛膏主打纤长/浓密/卷翘，能直接带来明显妆效变化。" },
+        b: { name: "睫毛打底", img: ASSET_BASE + "lash-primer.webp", desc: "睫毛打底用于增强后续睫毛膏表现，本身妆效通常更弱、更偏辅助。" },
         correct: "睫毛膏"
       }
     ];
 
     // =============================
-    // 轻量工具
+    // 工具
     // =============================
     function shuffle(arr) {
       const a = [...arr];
@@ -314,6 +372,14 @@
       return a;
     }
     function clamp(n, min, max) { return Math.max(min, Math.min(max, n)); }
+
+    // 预加载图片，减少切题闪烁
+    function preloadImages(urls) {
+      urls.forEach(u => {
+        const im = new Image();
+        im.src = u;
+      });
+    }
 
     // =============================
     // 本地“最近积分”存储
@@ -329,9 +395,7 @@
     function pushHistory(entry) {
       const list = loadHistory();
       list.unshift(entry);
-      // 仅保留最近5条
-      const trimmed = list.slice(0, 5);
-      saveHistory(trimmed);
+      saveHistory(list.slice(0, 5));
     }
 
     // =============================
@@ -346,8 +410,28 @@
     function showOnly(view) {
       [viewHome, viewRules, viewScore, viewGame, viewResult].forEach(v => v.classList.add("hidden"));
       view.classList.remove("hidden");
-      // 让移动端在切换时更顺滑
       window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // =============================
+    // DOM：难度 UI
+    // =============================
+    const btnDiffEasy = document.getElementById("btnDiffEasy");
+    const btnDiffHard = document.getElementById("btnDiffHard");
+    const diffHint = document.getElementById("diffHint");
+
+    function renderDiffUI() {
+      const d = getDiff();
+      // 简单做“选中态”
+      if (d === "easy") {
+        btnDiffEasy.classList.add("bg-appleBg");
+        btnDiffHard.classList.remove("bg-appleBg");
+        diffHint.textContent = "普通：提示更直白；选项仍只看图作答；解析在作答后给出。";
+      } else {
+        btnDiffHard.classList.add("bg-appleBg");
+        btnDiffEasy.classList.remove("bg-appleBg");
+        diffHint.textContent = "困难：选项仅图片呈现；提示更生活化；解析在作答后给出。";
+      }
     }
 
     // =============================
@@ -359,10 +443,12 @@
 
     const optA = document.getElementById("optA");
     const optB = document.getElementById("optB");
-    const optATitle = document.getElementById("optATitle");
-    const optBTitle = document.getElementById("optBTitle");
-    const optADesc = document.getElementById("optADesc");
-    const optBDesc = document.getElementById("optBDesc");
+
+    const imgA = document.getElementById("imgA");
+    const imgB = document.getElementById("imgB");
+
+    const srNameA = document.getElementById("srNameA");
+    const srNameB = document.getElementById("srNameB");
 
     const feedbackCard = document.getElementById("feedbackCard");
     const feedback = document.getElementById("feedback");
@@ -387,19 +473,53 @@
     // 状态
     // =============================
     let gameActive = false;
-    let roundIndex = 0; // 0..2
+    let roundIndex = 0;
     let score = 0;
     let questions = [];
     let answered = false;
     let currentQ = null;
-    let currentLayout = null; // {A:{name,desc}, B:{name,desc}, correctName}
+    let currentLayout = null; // {A:{name,img,desc}, B:{name,img,desc}, correctName}
 
     // =============================
-    // UI：样式提示
+    // 解析节点（方案B）：动态插入/移除
+    // =============================
+    function clearAnalysisNodes() {
+      const aNode = optA.querySelector("[data-analysis='A']");
+      const bNode = optB.querySelector("[data-analysis='B']");
+      if (aNode) aNode.remove();
+      if (bNode) bNode.remove();
+    }
+
+    function injectAnalysis(side, name, desc) {
+      const host = (side === "A") ? optA : optB;
+
+      const wrap = document.createElement("div");
+      wrap.setAttribute("data-analysis", side);
+      wrap.className = "mt-4 rounded-xl border border-appleGray bg-appleBg p-4";
+
+      const title = document.createElement("div");
+      title.className = "text-sm text-appleSub";
+      title.textContent = "题目解析";
+
+      const n = document.createElement("div");
+      n.className = "mt-1 text-base font-semibold";
+      n.textContent = name;
+
+      const p = document.createElement("div");
+      p.className = "mt-2 text-sm text-appleSub leading-relaxed";
+      p.textContent = desc;
+
+      wrap.appendChild(title);
+      wrap.appendChild(n);
+      wrap.appendChild(p);
+
+      host.appendChild(wrap);
+    }
+
+    // =============================
+    // UI：边框高亮
     // =============================
     function setOptionBorder(state) {
-      // state: "neutral" | "correctA" | "correctB" | "wrongA" | "wrongB"
-      // 先清理
       [optA, optB].forEach(btn => {
         btn.classList.remove("border-appleGreen","border-appleRed","ring-2","ring-appleGreen","ring-appleRed");
         btn.classList.add("border-appleGray");
@@ -428,18 +548,6 @@
       optB.disabled = !enabled;
     }
 
-    function hideDescs() {
-      optADesc.classList.add("hidden");
-      optBDesc.classList.add("hidden");
-    }
-
-    function showDescs(aDesc, bDesc) {
-      optADesc.textContent = aDesc;
-      optBDesc.textContent = bDesc;
-      optADesc.classList.remove("hidden");
-      optBDesc.classList.remove("hidden");
-    }
-
     function updateHUD() {
       roundNum.textContent = String(roundIndex + 1);
       scoreBadge.textContent = String(score);
@@ -458,7 +566,14 @@
       feedbackCard.classList.add("hidden");
       rewardLine.textContent = "";
       setOptionBorder("neutral");
-      hideDescs();
+      clearAnalysisNodes();
+
+      // 预加载本局图片
+      const urls = [];
+      questions.forEach(q => {
+        urls.push(q.a.img, q.b.img);
+      });
+      preloadImages(urls);
 
       showOnly(viewGame);
       loadRound();
@@ -469,12 +584,13 @@
       answered = false;
       updateHUD();
 
-      promptEl.textContent = currentQ.prompt;
+      const d = getDiff();
+      promptEl.textContent = (d === "hard") ? currentQ.promptHard : currentQ.promptEasy;
 
-      // 洗牌放置A/B（仅显示名称，不显示desc）
+      // 洗牌摆放 A/B（作答前仅图片）
       const variants = shuffle([
-        { name: currentQ.a.name, desc: currentQ.a.desc },
-        { name: currentQ.b.name, desc: currentQ.b.desc }
+        { name: currentQ.a.name, img: currentQ.a.img, desc: currentQ.a.desc },
+        { name: currentQ.b.name, img: currentQ.b.img, desc: currentQ.b.desc }
       ]);
 
       currentLayout = {
@@ -483,17 +599,22 @@
         correctName: currentQ.correct
       };
 
-      optATitle.textContent = currentLayout.A.name;
-      optBTitle.textContent = currentLayout.B.name;
+      // 设置图片（作答时只显示图）
+      imgA.src = currentLayout.A.img;
+      imgB.src = currentLayout.B.img;
 
-      // 作答前：不展示说明
-      hideDescs();
+      // alt & sr-only：不影响视觉，但提升无障碍与可维护性
+      imgA.alt = "化妆品选项A（图片）";
+      imgB.alt = "化妆品选项B（图片）";
+      srNameA.textContent = currentLayout.A.name;
+      srNameB.textContent = currentLayout.B.name;
 
-      // 反馈模块隐藏
+      // 关键：切题前移除上一题解析
+      clearAnalysisNodes();
+
       feedbackCard.classList.add("hidden");
       btnNext.disabled = true;
 
-      // 选项可点击
       setChoicesEnabled(true);
       setOptionBorder("neutral");
     }
@@ -509,10 +630,12 @@
 
       const isCorrect = chosenName === correctName;
 
-      // 作答后：展示两边说明（符合你第1条需求）
-      showDescs(currentLayout.A.desc, currentLayout.B.desc);
+      // 作答后：插入解析（专业表述只出现在这里）
+      clearAnalysisNodes();
+      injectAnalysis("A", currentLayout.A.name, currentLayout.A.desc);
+      injectAnalysis("B", currentLayout.B.name, currentLayout.B.desc);
 
-      // 反馈模块立即显示（符合你第2条 b）
+      // 反馈模块立即显示
       feedbackCard.classList.remove("hidden");
 
       if (isCorrect) {
@@ -525,7 +648,6 @@
         rewardLine.textContent = "🫣🍈（榴莲惩罚）";
         setOptionBorder(choiceKey === "A" ? "wrongA" : "wrongB");
 
-        // 再标出正确项
         const correctKey = (currentLayout.A.name === correctName) ? "A" : "B";
         setTimeout(() => {
           setOptionBorder(correctKey === "A" ? "correctA" : "correctB");
@@ -534,7 +656,6 @@
 
       updateHUD();
 
-      // 最后一题：不显示“下一题”，而是直接引导结算
       if (roundIndex === 2) {
         btnNext.textContent = "查看结算结果";
         btnNext.disabled = false;
@@ -559,14 +680,13 @@
     function endGame() {
       gameActive = false;
 
-      // 写入历史
       pushHistory({
         ts: Date.now(),
         score,
-        total: 3
+        total: 3,
+        diff: getDiff()
       });
 
-      // 结算渲染
       renderResult();
       showOnly(viewResult);
     }
@@ -608,6 +728,7 @@
       list.forEach(item => {
         const s = clamp(item.score, 0, 3);
         const hearts = s === 0 ? "💔" : "❤️".repeat(s);
+        const diffText = item.diff === "easy" ? "普通" : "困难";
 
         const card = document.createElement("div");
         card.className = "rounded-xl border border-appleGray bg-appleBg p-4";
@@ -616,6 +737,7 @@
             <div>
               <div class="text-sm text-appleSub">时间</div>
               <div class="mt-1 font-medium">${formatTime(item.ts)}</div>
+              <div class="mt-1 text-sm text-appleSub">难度：${diffText}</div>
             </div>
             <div class="text-right">
               <div class="text-sm text-appleSub">成绩</div>
@@ -629,9 +751,13 @@
     }
 
     // =============================
-    // 导航按钮绑定
+    // 事件绑定
     // =============================
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // 难度按钮
+    btnDiffEasy.addEventListener("click", () => setDiff("easy"));
+    btnDiffHard.addEventListener("click", () => setDiff("hard"));
 
     // 首页三按钮
     document.getElementById("btnGoGame").addEventListener("click", startGame);
@@ -659,7 +785,8 @@
     document.getElementById("btnResultToHome").addEventListener("click", () => showOnly(viewHome));
     document.getElementById("btnResultToScore").addEventListener("click", () => { renderHistory(); showOnly(viewScore); });
 
-    // 初始：只显示首页
+    // 初始：渲染难度 + 首页
+    renderDiffUI();
     showOnly(viewHome);
   </script>
 </body>
