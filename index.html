@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
 
   <title>萝卜纸巾猫情侣版｜但男友是那只猫 - GameSurvivors</title>
-  <meta name="description" content="萝卜纸巾猫，但男友是那只猫。别笑，你也过不了第二关：3次机会，选对亲亲💋，选错榴莲🍈，最后用红心结算默契值。" />
+  <meta name="description" content="萝卜纸巾猫情侣版，但男友是那只猫。别笑，你也过不了第二关：3次机会，选对亲亲💋，选错榴莲🍈，看看男友的默契度。" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://gamesurvivors.com/luobo-zhijin-couple" />
   <meta name="theme-color" content="#FF9F0A" />
@@ -94,10 +94,10 @@
   <header class="max-w-3xl mx-auto px-4 sm:px-6 pt-10 pb-6 relative z-10">
     <!-- 仅 1 个 H1 -->
     <h1 class="text-2xl sm:text-4xl font-semibold tracking-tight">
-      萝卜纸巾猫，但男友是那只猫
+      萝卜纸巾猫情侣版，但男友是那只猫
     </h1>
     <p class="mt-3 text-appleSub leading-relaxed max-w-2xl">
-      别笑，你也过不了第二关。三次机会：选对亲亲💋，选错榴莲🍈，最后看你能拿几颗心❤️
+      别笑，你也过不了第二关。
     </p>
   </header>
 
@@ -106,7 +106,7 @@
     <section id="viewHome" class="rounded-2xl glass shadow-apple border border-white/60 p-5 sm:p-6">
       <h2 class="text-lg sm:text-xl font-semibold">开局前先定调</h2>
       <p class="mt-2 text-appleSub leading-relaxed">
-        普通模式：只看文字选。困难模式：只看图选（更像“男友实战”）。
+        一共三关：选对亲亲💋，选错榴莲🍈，最后看你能拿几颗心❤️。
       </p>
 
       <!-- 难度选择 -->
@@ -114,14 +114,14 @@
         <div class="text-sm text-appleSub">选择难度</div>
         <div class="mt-2 inline-flex rounded-xl border border-appleGray/60 overflow-hidden">
           <button id="btnDiffEasy" class="px-4 py-2 text-sm font-medium bg-white hover:bg-warmA transition">
-            普通（文字）
+            普通模式
           </button>
           <button id="btnDiffHard" class="px-4 py-2 text-sm font-medium bg-warmA hover:bg-warmA transition">
-            困难（只看图）
+            困难模式
           </button>
         </div>
         <div id="diffHint" class="mt-2 text-sm text-appleSub">
-          困难：提示更口语，选项只给图。别问，问就是“你先试试”。
+          困难：看图作答。别问，问就是“你先试试”。
         </div>
       </div>
 
@@ -142,7 +142,7 @@
       <div class="mt-6 rounded-xl border border-appleGray/60 bg-white/75 p-4">
         <div class="text-sm text-appleSub">友情提示</div>
         <div class="mt-1 font-medium">
-          这不是化妆考试，这是情侣默契测试。答错也别急，榴莲而已。
+          这不是化妆考试，这是情侣默契测试。答错也别急，下次努力。
         </div>
       </div>
     </section>
@@ -159,8 +159,8 @@
       <ul class="mt-4 space-y-2 text-appleSub leading-relaxed">
         <li>你扮演男友：每题从两个“看起来很像/名字很像”的化妆品里二选一。</li>
         <li>每局共 3 题；同一局内题目不重复。</li>
-        <li><strong>普通（文字）</strong>：选项只给名字；更适合热身。</li>
-        <li><strong>困难（只看图）</strong>：选项只给图片；你得既懂用途，也认得长相。</li>
+        <li><strong>普通模式</strong>：选项只给名字；更适合热身。</li>
+        <li><strong>困难模式</strong>：选项只给图片；你得既懂用途，也认得长相。</li>
         <li>作答后立刻公布结果：答对💋，答错🍈，并给出题目解析（让你下次少挨骂）。</li>
         <li>结算：用 1-3 颗红心❤️代表答对题数（0题显示💔）。</li>
       </ul>
@@ -401,7 +401,7 @@
       {
         id: "brow-pencil-vs-brow-powder",
         promptEasy: "她说：『我想眉毛画得更清楚一点。』你选？",
-        promptHard: "她说：『我想眉毛更有“根根分明”的感觉，别糊成一片。』",
+        promptHard: "她说：『我想眉毛更有感觉，别糊成一片。』",
         a: { name: "眉笔", img: ASSET_BASE + "brow-pencil.webp", desc: "眉笔线条感更强，适合刻画眉形与细节，容易做出清晰眉尾和毛流。" },
         b: { name: "眉粉", img: ASSET_BASE + "brow-powder.webp", desc: "眉粉雾面柔和，适合大面积填色与自然过渡，但线条锐利度通常不如眉笔。" },
         correct: "眉笔"
@@ -417,7 +417,7 @@
       {
         id: "setting-spray-vs-setting-powder",
         promptEasy: "她说：『我想马上控油、不要反光。』你选？",
-        promptHard: "她说：『我现在脸好油，拍照要变“反光板”了，快给我按住它！』",
+        promptHard: "她说：『我现在脸好油，我想让脸更自然一点！』",
         a: { name: "定妆喷雾", img: ASSET_BASE + "setting-spray.webp", desc: "定妆喷雾更偏成膜与服帖度提升，控油与哑光效果取决于配方类型。" },
         b: { name: "定妆粉", img: ASSET_BASE + "setting-powder.webp", desc: "定妆粉能更直接压油光、柔焦毛孔，达到快速哑光与控油目的。" },
         correct: "定妆粉"
@@ -724,7 +724,7 @@
       let comment = "先别急着自信：建议把她常用那几样记下来。";
       if (s === 1) comment = "勉强过关：榴莲暂缓发货。";
       if (s === 2) comment = "不错：已经有点“会看眼色”了。";
-      if (s === 3) comment = "满分：今晚你是“懂妆王”。";
+      if (s === 3) comment = "满分：今晚你是“满分男友”。";
       finalCommentEl.textContent = comment;
     }
 
@@ -750,7 +750,7 @@
       list.forEach(item => {
         const s = clamp(item.score, 0, 3);
         const hearts = s === 0 ? "💔" : "❤️".repeat(s);
-        const diffText = item.diff === "easy" ? "普通（文字）" : "困难（只看图）";
+        const diffText = item.diff === "easy" ? "普通模式" : "困难模式";
 
         const card = document.createElement("div");
         card.className = "rounded-xl border border-appleGray/60 bg-white/80 p-4";
