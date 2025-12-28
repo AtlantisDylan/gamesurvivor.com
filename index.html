@@ -4,11 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
 
-  <title>萝卜纸巾猫情侣版｜但男友是那只猫- GameSurvivors</title>
-  <meta name="description" content="《萝卜纸巾猫》情侣版上线~~快发给男友让他帮你选化妆品吧！3次机会，答对亲吻奖励，答错榴莲惩罚，看你能得芳心几许？" />
+  <title>萝卜纸巾猫情侣版｜但男友是那只猫 - GameSurvivors</title>
+  <meta name="description" content="萝卜纸巾猫，但男友是那只猫。别笑，你也过不了第二关：3次机会，选对亲亲💋，选错榴莲🍈，最后用红心结算默契值。" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://gamesurvivors.com/luobo-zhijin-couple" />
-  <meta name="theme-color" content="#0A84FF" />
+  <meta name="theme-color" content="#FF9F0A" />
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -16,17 +16,20 @@
       theme: {
         extend: {
           colors: {
-            appleBg: "#F5F5F7",
             appleCard: "#FFFFFF",
             appleText: "#1D1D1F",
             appleSub: "#6E6E73",
             appleBlue: "#0A84FF",
             appleGreen: "#34C759",
             appleRed: "#FF3B30",
-            appleGray: "#E5E5EA"
+            appleGray: "#E5E5EA",
+            warmA: "#FFF3E8",
+            warmB: "#FFD8B5",
+            warmC: "#FFB26B",
+            warmD: "#FF8A00"
           },
           boxShadow: {
-            apple: "0 10px 30px rgba(0,0,0,0.08)"
+            apple: "0 10px 30px rgba(0,0,0,0.10)"
           }
         }
       }
@@ -41,7 +44,7 @@
     "url":"https://gamesurvivors.com/luobo-zhijin-couple",
     "applicationCategory":"GameApplication",
     "operatingSystem":"Web",
-    "description":"《萝卜纸巾猫》情侣版上线~~快发给男友让他帮你选化妆品吧！3次机会，答对亲吻奖励，答错榴莲惩罚，看你能得芳心几许？"
+    "description":"萝卜纸巾猫情侣版：男友三连辨妆挑战。普通=只看文字；困难=只看图。答对亲吻奖励，答错榴莲惩罚，红心结算默契值。"
   }
   </script>
 
@@ -50,38 +53,75 @@
     .tap-scale:active { transform: scale(0.98); }
     .safe-pb { padding-bottom: env(safe-area-inset-bottom); }
     .no-select { -webkit-user-select:none; user-select:none; }
+
+    /* 更“像人做的”：轻微玻璃质感 */
+    .glass {
+      background: rgba(255,255,255,0.86);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    /* 温馨但有活力的橘色背景 */
+    body{
+      background:
+        radial-gradient(900px 520px at 12% 10%, #FFF3E8 0%, rgba(255,243,232,0.0) 60%),
+        radial-gradient(900px 520px at 88% 12%, #FFD8B5 0%, rgba(255,216,181,0.0) 60%),
+        linear-gradient(180deg, #FFB26B 0%, #FF8A00 100%);
+    }
+
+    /* Emoji 墙纸层 */
+    #emojiWall span{
+      position:absolute;
+      user-select: none;
+      -webkit-user-select:none;
+      pointer-events:none;
+      mix-blend-mode: soft-light;
+      text-shadow: 0 10px 30px rgba(0,0,0,0.10);
+      filter: blur(0.2px);
+      will-change: transform;
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      #emojiWall span{ transition:none!important; animation:none!important; }
+    }
   </style>
 </head>
 
-<body class="bg-appleBg text-appleText safe-pb">
-  <header class="max-w-3xl mx-auto px-4 sm:px-6 pt-10 pb-6">
+<body class="text-appleText safe-pb">
+  <!-- Emoji wallpaper layer -->
+  <div id="emojiWall" class="fixed inset-0 overflow-hidden -z-10" aria-hidden="true"></div>
+
+  <header class="max-w-3xl mx-auto px-4 sm:px-6 pt-10 pb-6 relative z-10">
+    <!-- 仅 1 个 H1 -->
     <h1 class="text-2xl sm:text-4xl font-semibold tracking-tight">
-      萝卜纸巾情侣版（暂定）：困难模式·只看图辨妆
+      萝卜纸巾猫，但男友是那只猫
     </h1>
     <p class="mt-3 text-appleSub leading-relaxed max-w-2xl">
-      女朋友用很日常的说法提需求，你只能看两张化妆品图片做选择。答对亲吻奖励，答错榴莲惩罚，3题后红心结算默契值。
+      别笑，你也过不了第二关。三次机会：选对亲亲💋，选错榴莲🍈，最后看你能拿几颗心❤️
     </p>
   </header>
 
-  <main class="max-w-3xl mx-auto px-4 sm:px-6 pb-12">
+  <main class="max-w-3xl mx-auto px-4 sm:px-6 pb-12 relative z-10">
     <!-- ========== A) 初始页面 ========== -->
-    <section id="viewHome" class="rounded-2xl bg-appleCard shadow-apple border border-appleGray p-5 sm:p-6">
-      <h2 class="text-lg sm:text-xl font-semibold">开始前</h2>
+    <section id="viewHome" class="rounded-2xl glass shadow-apple border border-white/60 p-5 sm:p-6">
+      <h2 class="text-lg sm:text-xl font-semibold">开局前先定调</h2>
       <p class="mt-2 text-appleSub leading-relaxed">
-        先选难度，再开始。
+        普通模式：只看文字选。困难模式：只看图选（更像“男友实战”）。
       </p>
 
       <!-- 难度选择 -->
-      <div class="mt-4 rounded-xl border border-appleGray bg-white p-4">
+      <div class="mt-4 rounded-xl border border-appleGray/60 bg-white/75 p-4">
         <div class="text-sm text-appleSub">选择难度</div>
-        <div class="mt-2 inline-flex rounded-xl border border-appleGray overflow-hidden">
-          <button id="btnDiffEasy" class="px-4 py-2 text-sm font-medium bg-white hover:bg-appleBg transition">
-            普通
+        <div class="mt-2 inline-flex rounded-xl border border-appleGray/60 overflow-hidden">
+          <button id="btnDiffEasy" class="px-4 py-2 text-sm font-medium bg-white hover:bg-warmA transition">
+            普通（文字）
           </button>
-          <button id="btnDiffHard" class="px-4 py-2 text-sm font-medium bg-appleBg hover:bg-appleBg transition">
-            困难
+          <button id="btnDiffHard" class="px-4 py-2 text-sm font-medium bg-warmA hover:bg-warmA transition">
+            困难（只看图）
           </button>
         </div>
+        <div id="diffHint" class="mt-2 text-sm text-appleSub">
+          困难：提示更口语，选项只给图。别问，问就是“你先试试”。
         </div>
       </div>
 
@@ -90,44 +130,47 @@
           开始游戏
         </button>
 
-        <button id="btnGoRules" class="tap-scale inline-flex items-center justify-center rounded-xl px-4 py-3 bg-white border border-appleGray text-appleText font-medium hover:shadow-apple transition">
+        <button id="btnGoRules" class="tap-scale inline-flex items-center justify-center rounded-xl px-4 py-3 bg-white/85 border border-appleGray/60 text-appleText font-medium hover:shadow-apple transition">
           查看细致规则
         </button>
 
-        <button id="btnGoScore" class="tap-scale inline-flex items-center justify-center rounded-xl px-4 py-3 bg-white border border-appleGray text-appleText font-medium hover:shadow-apple transition">
+        <button id="btnGoScore" class="tap-scale inline-flex items-center justify-center rounded-xl px-4 py-3 bg-white/85 border border-appleGray/60 text-appleText font-medium hover:shadow-apple transition">
           最近积分
         </button>
       </div>
 
-      <div class="mt-6 rounded-xl border border-appleGray bg-white p-4">
+      <div class="mt-6 rounded-xl border border-appleGray/60 bg-white/75 p-4">
+        <div class="text-sm text-appleSub">友情提示</div>
+        <div class="mt-1 font-medium">
+          这不是化妆考试，这是情侣默契测试。答错也别急，榴莲而已。
         </div>
       </div>
     </section>
 
     <!-- ========== 查看细致规则（单独页） ========== -->
-    <section id="viewRules" class="hidden mt-6 rounded-2xl bg-appleCard shadow-apple border border-appleGray p-5 sm:p-6">
+    <section id="viewRules" class="hidden mt-6 rounded-2xl glass shadow-apple border border-white/60 p-5 sm:p-6">
       <div class="flex items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-semibold">细致规则</h2>
-        <button id="btnRulesBack" class="tap-scale rounded-xl px-3 py-2 bg-white border border-appleGray text-sm font-medium hover:shadow-apple transition">
+        <button id="btnRulesBack" class="tap-scale rounded-xl px-3 py-2 bg-white/85 border border-appleGray/60 text-sm font-medium hover:shadow-apple transition">
           返回
         </button>
       </div>
 
       <ul class="mt-4 space-y-2 text-appleSub leading-relaxed">
-        <li>你扮演男生：每题根据女朋友的需求提示，从两款相似化妆品中二选一。</li>
+        <li>你扮演男友：每题从两个“看起来很像/名字很像”的化妆品里二选一。</li>
         <li>每局共 3 题；同一局内题目不重复。</li>
-        <li>普通模式：提示更直白；仍然只看图作答（更贴近“困难”玩法一致性）。</li>
-        <li>困难模式：提示更口语、更生活化；作答前不出现任何解析信息。</li>
-        <li>作答后：立即显示“当前反馈”，公布正确答案，并展示两款产品的名称与专业解析（帮助玩家学习）。</li>
-        <li>结算：以 1-3 颗红心代表答对题数（0题显示💔）。</li>
+        <li><strong>普通（文字）</strong>：选项只给名字；更适合热身。</li>
+        <li><strong>困难（只看图）</strong>：选项只给图片；你得既懂用途，也认得长相。</li>
+        <li>作答后立刻公布结果：答对💋，答错🍈，并给出题目解析（让你下次少挨骂）。</li>
+        <li>结算：用 1-3 颗红心❤️代表答对题数（0题显示💔）。</li>
       </ul>
     </section>
 
     <!-- ========== 最近积分（单独页） ========== -->
-    <section id="viewScore" class="hidden mt-6 rounded-2xl bg-appleCard shadow-apple border border-appleGray p-5 sm:p-6">
+    <section id="viewScore" class="hidden mt-6 rounded-2xl glass shadow-apple border border-white/60 p-5 sm:p-6">
       <div class="flex items-start justify-between gap-3">
         <h2 class="text-lg sm:text-xl font-semibold">最近积分</h2>
-        <button id="btnScoreBack" class="tap-scale rounded-xl px-3 py-2 bg-white border border-appleGray text-sm font-medium hover:shadow-apple transition">
+        <button id="btnScoreBack" class="tap-scale rounded-xl px-3 py-2 bg-white/85 border border-appleGray/60 text-sm font-medium hover:shadow-apple transition">
           返回
         </button>
       </div>
@@ -136,10 +179,10 @@
         本地记录最近 5 局（仅保存在你的浏览器中）。
       </p>
 
-      <div class="mt-4 rounded-xl border border-appleGray bg-white p-4">
+      <div class="mt-4 rounded-xl border border-appleGray/60 bg-white/75 p-4">
         <div class="flex items-center justify-between gap-3">
           <div class="text-sm text-appleSub">记录列表</div>
-          <button id="btnClearHistory" class="tap-scale rounded-xl px-3 py-2 bg-white border border-appleGray text-sm font-medium hover:shadow-apple transition">
+          <button id="btnClearHistory" class="tap-scale rounded-xl px-3 py-2 bg-white/85 border border-appleGray/60 text-sm font-medium hover:shadow-apple transition">
             清空记录
           </button>
         </div>
@@ -150,47 +193,57 @@
     </section>
 
     <!-- ========== B) 游戏页：3道题 ========== -->
-    <section id="viewGame" class="hidden mt-6 rounded-2xl bg-appleCard shadow-apple border border-appleGray p-5 sm:p-6">
+    <section id="viewGame" class="hidden mt-6 rounded-2xl glass shadow-apple border border-white/60 p-5 sm:p-6">
       <div class="flex flex-wrap items-center justify-between gap-3">
-        <h2 class="text-lg sm:text-xl font-semibold">挑战进行中：第 <span id="roundNum">1</span> / 3 题</h2>
+        <h2 class="text-lg sm:text-xl font-semibold">男友挑战：第 <span id="roundNum">1</span> / 3 题</h2>
         <div class="flex items-center gap-2 text-sm text-appleSub">
-          <span class="inline-flex items-center justify-center w-8 h-8 rounded-xl bg-white border border-appleGray" title="正确数">✓</span>
+          <span class="inline-flex items-center justify-center w-8 h-8 rounded-xl bg-white/85 border border-appleGray/60" title="正确数">❤️</span>
           <span id="scoreBadge" class="font-medium">0</span>
         </div>
       </div>
 
-      <p id="prompt" class="mt-2 text-appleSub leading-relaxed">
-        —
-      </p>
+      <p id="prompt" class="mt-2 text-appleSub leading-relaxed">—</p>
 
-      <!-- 选项：仅图片呈现 -->
       <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <button id="optA" class="tap-scale no-select text-left rounded-2xl border border-appleGray bg-white p-4 hover:shadow-apple transition disabled:opacity-50 disabled:cursor-not-allowed">
+        <!-- Option A -->
+        <button id="optA" class="tap-scale no-select text-left rounded-2xl border border-appleGray/60 bg-white/85 p-4 hover:shadow-apple transition disabled:opacity-50 disabled:cursor-not-allowed">
           <div class="text-sm text-appleSub">选项 A</div>
 
-          <div class="mt-3 rounded-xl border border-appleGray overflow-hidden bg-appleBg">
-            <img id="imgA" src="" alt="" loading="eager" class="w-full aspect-square object-cover" />
+          <!-- 普通：仅文字（不出现图片） -->
+          <div data-mode="easy" class="mt-3 hidden">
+            <div id="optATitle" class="text-xl font-semibold tracking-tight">-</div>
+            <div class="mt-1 text-sm text-appleSub">点我就算你选这个</div>
           </div>
 
-          <!-- 隐藏名称：仅给读屏/SEO（不帮助玩家视觉作答） -->
-          <div id="srNameA" class="sr-only"></div>
-
-          <!-- 方案B：作答前无解析节点；作答后动态插入解析 -->
+          <!-- 困难：仅图片（不出现名称） -->
+          <div data-mode="hard" class="mt-3 hidden">
+            <div class="rounded-xl border border-appleGray/60 overflow-hidden bg-white">
+              <img id="imgA" src="" alt="化妆品选项A（图片）" loading="eager" class="w-full aspect-square object-cover" />
+            </div>
+            <div id="srNameA" class="sr-only"></div>
+          </div>
         </button>
 
-        <button id="optB" class="tap-scale no-select text-left rounded-2xl border border-appleGray bg-white p-4 hover:shadow-apple transition disabled:opacity-50 disabled:cursor-not-allowed">
+        <!-- Option B -->
+        <button id="optB" class="tap-scale no-select text-left rounded-2xl border border-appleGray/60 bg-white/85 p-4 hover:shadow-apple transition disabled:opacity-50 disabled:cursor-not-allowed">
           <div class="text-sm text-appleSub">选项 B</div>
 
-          <div class="mt-3 rounded-xl border border-appleGray overflow-hidden bg-appleBg">
-            <img id="imgB" src="" alt="" loading="eager" class="w-full aspect-square object-cover" />
+          <div data-mode="easy" class="mt-3 hidden">
+            <div id="optBTitle" class="text-xl font-semibold tracking-tight">-</div>
+            <div class="mt-1 text-sm text-appleSub">点我就算你选这个</div>
           </div>
 
-          <div id="srNameB" class="sr-only"></div>
+          <div data-mode="hard" class="mt-3 hidden">
+            <div class="rounded-xl border border-appleGray/60 overflow-hidden bg-white">
+              <img id="imgB" src="" alt="化妆品选项B（图片）" loading="eager" class="w-full aspect-square object-cover" />
+            </div>
+            <div id="srNameB" class="sr-only"></div>
+          </div>
         </button>
       </div>
 
       <!-- 作答后立即显示反馈 -->
-      <div id="feedbackCard" class="hidden mt-5 rounded-xl border border-appleGray bg-white p-4">
+      <div id="feedbackCard" class="hidden mt-5 rounded-xl border border-appleGray/60 bg-white/85 p-4">
         <div class="text-sm text-appleSub">当前反馈</div>
         <div id="feedback" class="mt-2 text-base font-semibold">-</div>
         <div id="rewardLine" class="mt-2 text-2xl" aria-live="polite"></div>
@@ -199,7 +252,7 @@
           <button id="btnNext" class="tap-scale inline-flex items-center justify-center rounded-xl px-4 py-2 bg-appleGreen text-white font-medium shadow-apple hover:opacity-95 transition disabled:opacity-50 disabled:cursor-not-allowed">
             下一题
           </button>
-          <button id="btnQuitToHome" class="tap-scale inline-flex items-center justify-center rounded-xl px-4 py-2 bg-white border border-appleGray text-appleText font-medium hover:shadow-apple transition">
+          <button id="btnQuitToHome" class="tap-scale inline-flex items-center justify-center rounded-xl px-4 py-2 bg-white/85 border border-appleGray/60 text-appleText font-medium hover:shadow-apple transition">
             退出到首页
           </button>
         </div>
@@ -207,22 +260,22 @@
     </section>
 
     <!-- ========== C) 结算结果页 ========== -->
-    <section id="viewResult" class="hidden mt-6 rounded-2xl bg-appleCard shadow-apple border border-appleGray p-5 sm:p-6">
+    <section id="viewResult" class="hidden mt-6 rounded-2xl glass shadow-apple border border-white/60 p-5 sm:p-6">
       <h2 class="text-lg sm:text-xl font-semibold">结算结果</h2>
       <p class="mt-2 text-appleSub leading-relaxed">
-        你本局答对 <span id="finalScoreInline" class="font-semibold text-appleText">0</span> 题，红心代表默契值。
+        你本局答对 <span id="finalScoreInline" class="font-semibold text-appleText">0</span> 题。红心就是“今晚能不能活”的指标。
       </p>
 
       <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div class="rounded-2xl border border-appleGray bg-white p-5">
+        <div class="rounded-2xl border border-appleGray/60 bg-white/85 p-5">
           <div class="text-sm text-appleSub">红心</div>
           <div id="hearts" class="mt-2 text-3xl" aria-live="polite">—</div>
         </div>
-        <div class="rounded-2xl border border-appleGray bg-white p-5">
+        <div class="rounded-2xl border border-appleGray/60 bg-white/85 p-5">
           <div class="text-sm text-appleSub">正确题数</div>
           <div id="finalScore" class="mt-2 text-2xl font-semibold">—</div>
         </div>
-        <div class="rounded-2xl border border-appleGray bg-white p-5">
+        <div class="rounded-2xl border border-appleGray/60 bg-white/85 p-5">
           <div class="text-sm text-appleSub">评价</div>
           <div id="finalComment" class="mt-2 text-base font-semibold">—</div>
         </div>
@@ -232,24 +285,55 @@
         <button id="btnPlayAgain" class="tap-scale inline-flex items-center justify-center rounded-xl px-4 py-2 bg-appleBlue text-white font-medium shadow-apple hover:opacity-95 transition">
           再来一局
         </button>
-        <button id="btnResultToHome" class="tap-scale inline-flex items-center justify-center rounded-xl px-4 py-2 bg-white border border-appleGray text-appleText font-medium hover:shadow-apple transition">
+        <button id="btnResultToHome" class="tap-scale inline-flex items-center justify-center rounded-xl px-4 py-2 bg-white/85 border border-appleGray/60 text-appleText font-medium hover:shadow-apple transition">
           回到首页
         </button>
-        <button id="btnResultToScore" class="tap-scale inline-flex items-center justify-center rounded-xl px-4 py-2 bg-white border border-appleGray text-appleText font-medium hover:shadow-apple transition">
+        <button id="btnResultToScore" class="tap-scale inline-flex items-center justify-center rounded-xl px-4 py-2 bg-white/85 border border-appleGray/60 text-appleText font-medium hover:shadow-apple transition">
           查看最近积分
         </button>
       </div>
     </section>
 
-    <footer class="mt-10 text-center text-sm text-appleSub">
+    <footer class="mt-10 text-center text-sm text-white/90">
       <h2 class="sr-only">页脚</h2>
-      <p>© <span id="year"></span> GameSurvivors.com · 萝卜纸巾情侣版（暂定）</p>
+      <p class="drop-shadow">© <span id="year"></span> GameSurvivors.com · 萝卜纸巾猫情侣版</p>
     </footer>
   </main>
 
   <script>
     // =============================
-    // 难度
+    // Emoji wallpaper：🥕🧻🐱❤️💄
+    // =============================
+    function renderEmojiWall() {
+      const wall = document.getElementById("emojiWall");
+      if (!wall) return;
+      wall.innerHTML = "";
+
+      const emojis = ["🥕","🧻","🐱","❤️","💄"];
+      const count = window.innerWidth < 640 ? 18 : 28;
+
+      for (let i = 0; i < count; i++) {
+        const sp = document.createElement("span");
+        sp.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+
+        const size = (Math.random() * 26 + 18); // 18..44px
+        const x = Math.random() * 100; // vw
+        const y = Math.random() * 100; // vh
+        const r = (Math.random() * 40 - 20); // -20..20deg
+        const op = (Math.random() * 0.08 + 0.12); // 0.12..0.20
+
+        sp.style.left = x + "vw";
+        sp.style.top = y + "vh";
+        sp.style.fontSize = size + "px";
+        sp.style.transform = "rotate(" + r + "deg)";
+        sp.style.opacity = op.toFixed(2);
+
+        wall.appendChild(sp);
+      }
+    }
+
+    // =============================
+    // 难度：普通=文字，困难=图片
     // =============================
     const DIFF_KEY = "gs_luobo_zhijin_diff_v1"; // "easy" | "hard"
     function getDiff() {
@@ -261,17 +345,10 @@
       renderDiffUI();
     }
 
-    // =============================
-    // 图片路径（默认本地资源方案）
-    // 你只要把图片按文件名放到 /assets/cosmetics/ 即可
-    // =============================
+    // 图片路径（本地资源方案）
     const ASSET_BASE = "/assets/cosmetics/";
 
-    // =============================
-    // 题库：promptHard 口语化；promptEasy 更直白
-    // 解析（desc）允许更专业，但仅作答后显示
-    // 每个选项必须提供 img（本地路径）
-    // =============================
+    // 题库：困难提示口语化；解析专业化但仅作答后展示
     const PAIRS = [
       {
         id: "lipstick-vs-lipbalm",
@@ -355,9 +432,6 @@
       }
     ];
 
-    // =============================
-    // 工具
-    // =============================
     function shuffle(arr) {
       const a = [...arr];
       for (let i = a.length - 1; i > 0; i--) {
@@ -367,31 +441,15 @@
       return a;
     }
     function clamp(n, min, max) { return Math.max(min, Math.min(max, n)); }
-
-    // 预加载图片，减少切题闪烁
-    function preloadImages(urls) {
-      urls.forEach(u => {
-        const im = new Image();
-        im.src = u;
-      });
-    }
+    function preloadImages(urls) { urls.forEach(u => { const im = new Image(); im.src = u; }); }
 
     // =============================
-    // 本地“最近积分”存储
+    // 本地“最近积分”
     // =============================
     const HISTORY_KEY = "gs_luobo_zhijin_couple_history_v1";
-    function loadHistory() {
-      try { return JSON.parse(localStorage.getItem(HISTORY_KEY) || "[]"); }
-      catch { return []; }
-    }
-    function saveHistory(list) {
-      localStorage.setItem(HISTORY_KEY, JSON.stringify(list));
-    }
-    function pushHistory(entry) {
-      const list = loadHistory();
-      list.unshift(entry);
-      saveHistory(list.slice(0, 5));
-    }
+    function loadHistory() { try { return JSON.parse(localStorage.getItem(HISTORY_KEY) || "[]"); } catch { return []; } }
+    function saveHistory(list) { localStorage.setItem(HISTORY_KEY, JSON.stringify(list)); }
+    function pushHistory(entry) { const list = loadHistory(); list.unshift(entry); saveHistory(list.slice(0, 5)); }
 
     // =============================
     // 视图切换
@@ -409,24 +467,30 @@
     }
 
     // =============================
-    // DOM：难度 UI
+    // DOM：难度 UI + 模式切换
     // =============================
     const btnDiffEasy = document.getElementById("btnDiffEasy");
     const btnDiffHard = document.getElementById("btnDiffHard");
     const diffHint = document.getElementById("diffHint");
 
+    function applyOptionMode(diff) {
+      const showEasy = diff === "easy";
+      document.querySelectorAll("[data-mode='easy']").forEach(el => el.classList.toggle("hidden", !showEasy));
+      document.querySelectorAll("[data-mode='hard']").forEach(el => el.classList.toggle("hidden", showEasy));
+    }
+
     function renderDiffUI() {
       const d = getDiff();
-      // 简单做“选中态”
       if (d === "easy") {
-        btnDiffEasy.classList.add("bg-appleBg");
-        btnDiffHard.classList.remove("bg-appleBg");
-        diffHint.textContent = "普通：提示更直白；选项仍只看图作答；解析在作答后给出。";
+        btnDiffEasy.classList.add("bg-warmA");
+        btnDiffHard.classList.remove("bg-warmA");
+        diffHint.textContent = "普通：选项只给文字。热身局，建议先从这开始。";
       } else {
-        btnDiffHard.classList.add("bg-appleBg");
-        btnDiffEasy.classList.remove("bg-appleBg");
-        diffHint.textContent = "困难：选项仅图片呈现；提示更生活化；解析在作答后给出。";
+        btnDiffHard.classList.add("bg-warmA");
+        btnDiffEasy.classList.remove("bg-warmA");
+        diffHint.textContent = "困难：选项只给图片。别笑，你也过不了第二关。";
       }
+      applyOptionMode(d);
     }
 
     // =============================
@@ -438,6 +502,9 @@
 
     const optA = document.getElementById("optA");
     const optB = document.getElementById("optB");
+
+    const optATitle = document.getElementById("optATitle");
+    const optBTitle = document.getElementById("optBTitle");
 
     const imgA = document.getElementById("imgA");
     const imgB = document.getElementById("imgB");
@@ -472,11 +539,10 @@
     let score = 0;
     let questions = [];
     let answered = false;
-    let currentQ = null;
     let currentLayout = null; // {A:{name,img,desc}, B:{name,img,desc}, correctName}
 
     // =============================
-    // 解析节点（方案B）：动态插入/移除
+    // 解析节点：动态插入/移除
     // =============================
     function clearAnalysisNodes() {
       const aNode = optA.querySelector("[data-analysis='A']");
@@ -490,11 +556,11 @@
 
       const wrap = document.createElement("div");
       wrap.setAttribute("data-analysis", side);
-      wrap.className = "mt-4 rounded-xl border border-appleGray bg-appleBg p-4";
+      wrap.className = "mt-4 rounded-xl border border-appleGray/60 bg-white/80 p-4";
 
       const title = document.createElement("div");
       title.className = "text-sm text-appleSub";
-      title.textContent = "题目解析";
+      title.textContent = "题目解析（别急，学会了下次再装）";
 
       const n = document.createElement("div");
       n.className = "mt-1 text-base font-semibold";
@@ -507,7 +573,6 @@
       wrap.appendChild(title);
       wrap.appendChild(n);
       wrap.appendChild(p);
-
       host.appendChild(wrap);
     }
 
@@ -517,36 +582,17 @@
     function setOptionBorder(state) {
       [optA, optB].forEach(btn => {
         btn.classList.remove("border-appleGreen","border-appleRed","ring-2","ring-appleGreen","ring-appleRed");
-        btn.classList.add("border-appleGray");
+        btn.classList.add("border-appleGray/60");
       });
 
-      if (state === "correctA") {
-        optA.classList.remove("border-appleGray");
-        optA.classList.add("border-appleGreen","ring-2","ring-appleGreen");
-      }
-      if (state === "correctB") {
-        optB.classList.remove("border-appleGray");
-        optB.classList.add("border-appleGreen","ring-2","ring-appleGreen");
-      }
-      if (state === "wrongA") {
-        optA.classList.remove("border-appleGray");
-        optA.classList.add("border-appleRed","ring-2","ring-appleRed");
-      }
-      if (state === "wrongB") {
-        optB.classList.remove("border-appleGray");
-        optB.classList.add("border-appleRed","ring-2","ring-appleRed");
-      }
+      if (state === "correctA") { optA.classList.remove("border-appleGray/60"); optA.classList.add("border-appleGreen","ring-2","ring-appleGreen"); }
+      if (state === "correctB") { optB.classList.remove("border-appleGray/60"); optB.classList.add("border-appleGreen","ring-2","ring-appleGreen"); }
+      if (state === "wrongA") { optA.classList.remove("border-appleGray/60"); optA.classList.add("border-appleRed","ring-2","ring-appleRed"); }
+      if (state === "wrongB") { optB.classList.remove("border-appleGray/60"); optB.classList.add("border-appleRed","ring-2","ring-appleRed"); }
     }
 
-    function setChoicesEnabled(enabled) {
-      optA.disabled = !enabled;
-      optB.disabled = !enabled;
-    }
-
-    function updateHUD() {
-      roundNum.textContent = String(roundIndex + 1);
-      scoreBadge.textContent = String(score);
-    }
+    function setChoicesEnabled(enabled) { optA.disabled = !enabled; optB.disabled = !enabled; }
+    function updateHUD() { roundNum.textContent = String(roundIndex + 1); scoreBadge.textContent = String(score); }
 
     // =============================
     // 游戏：开始/出题/作答/结算
@@ -563,53 +609,55 @@
       setOptionBorder("neutral");
       clearAnalysisNodes();
 
-      // 预加载本局图片
-      const urls = [];
-      questions.forEach(q => {
-        urls.push(q.a.img, q.b.img);
-      });
-      preloadImages(urls);
+      const d = getDiff();
+      applyOptionMode(d);
+
+      // 只在困难模式预加载图片
+      if (d === "hard") {
+        const urls = [];
+        questions.forEach(q => urls.push(q.a.img, q.b.img));
+        preloadImages(urls);
+      }
 
       showOnly(viewGame);
       loadRound();
     }
 
     function loadRound() {
-      currentQ = questions[roundIndex];
+      const q = questions[roundIndex];
       answered = false;
       updateHUD();
 
       const d = getDiff();
-      promptEl.textContent = (d === "hard") ? currentQ.promptHard : currentQ.promptEasy;
+      promptEl.textContent = (d === "hard") ? q.promptHard : q.promptEasy;
 
-      // 洗牌摆放 A/B（作答前仅图片）
+      // 洗牌摆放 A/B（作答前：普通仅文字；困难仅图片）
       const variants = shuffle([
-        { name: currentQ.a.name, img: currentQ.a.img, desc: currentQ.a.desc },
-        { name: currentQ.b.name, img: currentQ.b.img, desc: currentQ.b.desc }
+        { name: q.a.name, img: q.a.img, desc: q.a.desc },
+        { name: q.b.name, img: q.b.img, desc: q.b.desc }
       ]);
 
       currentLayout = {
         A: variants[0],
         B: variants[1],
-        correctName: currentQ.correct
+        correctName: q.correct
       };
 
-      // 设置图片（作答时只显示图）
+      // 普通：文字
+      optATitle.textContent = currentLayout.A.name;
+      optBTitle.textContent = currentLayout.B.name;
+
+      // 困难：图片
       imgA.src = currentLayout.A.img;
       imgB.src = currentLayout.B.img;
-
-      // alt & sr-only：不影响视觉，但提升无障碍与可维护性
-      imgA.alt = "化妆品选项A（图片）";
-      imgB.alt = "化妆品选项B（图片）";
-      srNameA.textContent = currentLayout.A.name;
+      srNameA.textContent = currentLayout.A.name; // 读屏用
       srNameB.textContent = currentLayout.B.name;
 
-      // 关键：切题前移除上一题解析
+      // 切题前移除上一题解析
       clearAnalysisNodes();
 
       feedbackCard.classList.add("hidden");
       btnNext.disabled = true;
-
       setChoicesEnabled(true);
       setOptionBorder("neutral");
     }
@@ -622,7 +670,6 @@
 
       const chosenName = currentLayout[choiceKey].name;
       const correctName = currentLayout.correctName;
-
       const isCorrect = chosenName === correctName;
 
       // 作答后：插入解析（专业表述只出现在这里）
@@ -630,44 +677,30 @@
       injectAnalysis("A", currentLayout.A.name, currentLayout.A.desc);
       injectAnalysis("B", currentLayout.B.name, currentLayout.B.desc);
 
-      // 反馈模块立即显示
       feedbackCard.classList.remove("hidden");
 
       if (isCorrect) {
         score += 1;
         feedback.textContent = `答对了：她要的是「${correctName}」。`;
-        rewardLine.textContent = "💋💋💋（亲吻奖励）";
+        rewardLine.textContent = "💋💋💋（今日保命成功）";
         setOptionBorder(choiceKey === "A" ? "correctA" : "correctB");
       } else {
         feedback.textContent = `答错了：她要的是「${correctName}」，你给了「${chosenName}」。`;
-        rewardLine.textContent = "🫣🍈（榴莲惩罚）";
+        rewardLine.textContent = "🍈🍈🍈（榴莲来咯）";
         setOptionBorder(choiceKey === "A" ? "wrongA" : "wrongB");
 
         const correctKey = (currentLayout.A.name === correctName) ? "A" : "B";
-        setTimeout(() => {
-          setOptionBorder(correctKey === "A" ? "correctA" : "correctB");
-        }, 250);
+        setTimeout(() => setOptionBorder(correctKey === "A" ? "correctA" : "correctB"), 250);
       }
 
       updateHUD();
-
-      if (roundIndex === 2) {
-        btnNext.textContent = "查看结算结果";
-        btnNext.disabled = false;
-      } else {
-        btnNext.textContent = "下一题";
-        btnNext.disabled = false;
-      }
+      btnNext.textContent = (roundIndex === 2) ? "查看结算结果" : "下一题";
+      btnNext.disabled = false;
     }
 
     function nextStep() {
       if (!answered) return;
-
-      if (roundIndex === 2) {
-        endGame();
-        return;
-      }
-
+      if (roundIndex === 2) { endGame(); return; }
       roundIndex += 1;
       loadRound();
     }
@@ -675,13 +708,7 @@
     function endGame() {
       gameActive = false;
 
-      pushHistory({
-        ts: Date.now(),
-        score,
-        total: 3,
-        diff: getDiff()
-      });
-
+      pushHistory({ ts: Date.now(), score, total: 3, diff: getDiff() });
       renderResult();
       showOnly(viewResult);
     }
@@ -694,10 +721,10 @@
       finalScoreInline.textContent = String(s);
       finalScoreEl.textContent = `${s} / 3`;
 
-      let comment = "需要加强学习：建议先记住她常用的那几样。";
-      if (s === 1) comment = "勉强过关：下一次，别让榴莲太嚣张。";
-      if (s === 2) comment = "不错：已经接近“心有灵犀”。";
-      if (s === 3) comment = "满分默契：今晚你是“懂妆王”。";
+      let comment = "先别急着自信：建议把她常用那几样记下来。";
+      if (s === 1) comment = "勉强过关：榴莲暂缓发货。";
+      if (s === 2) comment = "不错：已经有点“会看眼色”了。";
+      if (s === 3) comment = "满分：今晚你是“懂妆王”。";
       finalCommentEl.textContent = comment;
     }
 
@@ -723,10 +750,10 @@
       list.forEach(item => {
         const s = clamp(item.score, 0, 3);
         const hearts = s === 0 ? "💔" : "❤️".repeat(s);
-        const diffText = item.diff === "easy" ? "普通" : "困难";
+        const diffText = item.diff === "easy" ? "普通（文字）" : "困难（只看图）";
 
         const card = document.createElement("div");
-        card.className = "rounded-xl border border-appleGray bg-appleBg p-4";
+        card.className = "rounded-xl border border-appleGray/60 bg-white/80 p-4";
         card.innerHTML = `
           <div class="flex items-center justify-between gap-3">
             <div>
@@ -750,39 +777,39 @@
     // =============================
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // 难度按钮
     btnDiffEasy.addEventListener("click", () => setDiff("easy"));
     btnDiffHard.addEventListener("click", () => setDiff("hard"));
 
-    // 首页三按钮
     document.getElementById("btnGoGame").addEventListener("click", startGame);
     document.getElementById("btnGoRules").addEventListener("click", () => showOnly(viewRules));
     document.getElementById("btnGoScore").addEventListener("click", () => { renderHistory(); showOnly(viewScore); });
 
-    // 规则页返回
     document.getElementById("btnRulesBack").addEventListener("click", () => showOnly(viewHome));
 
-    // 积分页返回 + 清空
     document.getElementById("btnScoreBack").addEventListener("click", () => showOnly(viewHome));
     document.getElementById("btnClearHistory").addEventListener("click", () => {
       localStorage.removeItem(HISTORY_KEY);
       renderHistory();
     });
 
-    // 游戏页：作答 / 下一步 / 退出
     optA.addEventListener("click", () => answer("A"));
     optB.addEventListener("click", () => answer("B"));
     btnNext.addEventListener("click", nextStep);
     document.getElementById("btnQuitToHome").addEventListener("click", () => showOnly(viewHome));
 
-    // 结算页：再来一局 / 回首页 / 看积分
     document.getElementById("btnPlayAgain").addEventListener("click", startGame);
     document.getElementById("btnResultToHome").addEventListener("click", () => showOnly(viewHome));
     document.getElementById("btnResultToScore").addEventListener("click", () => { renderHistory(); showOnly(viewScore); });
 
-    // 初始：渲染难度 + 首页
+    // 初始：渲染难度 + 首页 + emoji墙纸
     renderDiffUI();
     showOnly(viewHome);
+    renderEmojiWall();
+
+    window.addEventListener("resize", () => {
+      clearTimeout(window.__emojiT);
+      window.__emojiT = setTimeout(renderEmojiWall, 150);
+    });
   </script>
 </body>
 </html>
