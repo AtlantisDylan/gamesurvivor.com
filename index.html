@@ -84,12 +84,57 @@
     @media (prefers-reduced-motion: reduce){
       #emojiWall span{ transition:none!important; animation:none!important; }
     }
+
+    /* “蒸蚌！”大字特效 */
+    #zhenbangOverlay{
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 60;
+      pointer-events: none;
+    }
+    #zhenbangOverlay.hidden{ display:none; }
+    #zhenbangCard{
+      padding: 18px 26px;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.70);
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.18);
+      transform: translateZ(0);
+    }
+    #zhenbangText{
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      line-height: 1;
+      font-size: clamp(44px, 9vw, 92px);
+      color: #FF3B30; /* Apple red：更“炸” */
+      text-shadow: 0 12px 36px rgba(0,0,0,0.12);
+      -webkit-text-stroke: 1px rgba(255,255,255,0.7);
+    }
+    .zb-anim{ animation: zbPop 900ms cubic-bezier(.19,.9,.2,1) both; }
+    @keyframes zbPop{
+      0%{ opacity:0; transform: scale(0.6) rotate(-10deg); }
+      18%{ opacity:1; transform: scale(1.05) rotate(3deg); }
+      45%{ opacity:1; transform: scale(1.15) rotate(-2deg); }
+      100%{ opacity:0; transform: scale(1.00) rotate(0deg); }
+    }
   </style>
 </head>
 
 <body class="text-appleText safe-pb">
   <!-- Emoji wallpaper layer -->
   <div id="emojiWall" class="fixed inset-0 overflow-hidden -z-10" aria-hidden="true"></div>
+
+  <!-- “蒸蚌！”特效层（答对时出现） -->
+  <div id="zhenbangOverlay" class="hidden" aria-hidden="true">
+    <div id="zhenbangCard">
+      <div id="zhenbangText">蒸蚌！</div>
+    </div>
+  </div>
 
   <header class="max-w-3xl mx-auto px-4 sm:px-6 pt-10 pb-6 relative z-10">
     <!-- 仅 1 个 H1 -->
@@ -113,10 +158,10 @@
       <div class="mt-4 rounded-xl border border-appleGray/60 bg-white/75 p-4">
         <div class="text-sm text-appleSub">选择难度</div>
         <div class="mt-2 inline-flex rounded-xl border border-appleGray/60 overflow-hidden">
-          <button id="btnDiffEasy" class="px-4 py-2 text-sm font-medium bg-white hover:bg-warmA transition">
+          <button id="btnDiffEasy" class="px-4 py-2 text-sm font-semibold transition bg-white/80 text-appleText hover:bg-warmA focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70">
             普通模式
           </button>
-          <button id="btnDiffHard" class="px-4 py-2 text-sm font-medium bg-warmA hover:bg-warmA transition">
+          <button id="btnDiffHard" class="px-4 py-2 text-sm font-semibold transition bg-warmD text-white shadow-apple hover:opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70">
             困难模式
           </button>
         </div>
@@ -481,15 +526,19 @@
 
     function renderDiffUI() {
       const d = getDiff();
-      if (d === "easy") {
-        btnDiffEasy.classList.add("bg-warmA");
-        btnDiffHard.classList.remove("bg-warmA");
-        diffHint.textContent = "普通：选项只给文字。热身局，建议先从这开始。";
-      } else {
-        btnDiffHard.classList.add("bg-warmA");
-        btnDiffEasy.classList.remove("bg-warmA");
-        diffHint.textContent = "困难：选项只给图片。别笑，你也过不了第二关。";
-      }
+      const easyActive = d === "easy";
+
+      const base = "px-4 py-2 text-sm font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70";
+      const active = "bg-warmD text-white shadow-apple hover:opacity-95";
+      const inactive = "bg-white/80 text-appleText hover:bg-warmA";
+
+      btnDiffEasy.className = `${base} ${easyActive ? active : inactive}`;
+      btnDiffHard.className = `${base} ${!easyActive ? active : inactive}`;
+
+      diffHint.textContent = easyActive
+        ? "普通：选项只给文字。热身局，建议先从这开始。"
+        : "困难：看图作答。别笑，你也过不了第二关。";
+
       applyOptionMode(d);
     }
 
@@ -515,6 +564,26 @@
     const feedbackCard = document.getElementById("feedbackCard");
     const feedback = document.getElementById("feedback");
     const rewardLine = document.getElementById("rewardLine");
+
+    // “蒸蚌！”特效（答对时弹出）
+    const zhenbangOverlay = document.getElementById("zhenbangOverlay");
+    const zhenbangCard = document.getElementById("zhenbangCard");
+
+    function flashZhenbang() {
+      if (!zhenbangOverlay || !zhenbangCard) return;
+      zhenbangOverlay.classList.remove("hidden");
+      // 重新触发动画
+      zhenbangCard.classList.remove("zb-anim");
+      void zhenbangCard.offsetWidth;
+      zhenbangCard.classList.add("zb-anim");
+
+      clearTimeout(window.__zbT);
+      window.__zbT = setTimeout(() => {
+        zhenbangOverlay.classList.add("hidden");
+        zhenbangCard.classList.remove("zb-anim");
+      }, 900);
+    }
+
     const btnNext = document.getElementById("btnNext");
 
     // =============================
@@ -683,6 +752,7 @@
         score += 1;
         feedback.textContent = `答对了：她要的是「${correctName}」。`;
         rewardLine.textContent = "💋💋💋（今日保命成功）";
+        flashZhenbang();
         setOptionBorder(choiceKey === "A" ? "correctA" : "correctB");
       } else {
         feedback.textContent = `答错了：她要的是「${correctName}」，你给了「${chosenName}」。`;
